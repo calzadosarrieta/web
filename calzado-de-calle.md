@@ -4,11 +4,10 @@ layout: section
 image: img/calzado-calle.webp
 categories:
 
-  - title: Calzado Infantil y respetuoso
-    filter-folder: /calzado de calle/Infantil y respetuoso
-    filter-name: infantil
-    filter-name-or: respetuoso
-    description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 
+  - title: Abarcas
+    filter-folder: /calzado de calle/Abarca
+    filter-name: 
+    description: Abarcas de goma para recibir a Olentzero
 
   - title: Calzado deportivo y de montaña
     filter-folder: /calzado de calle/Deportiva y monte
@@ -21,6 +20,22 @@ categories:
     filter-no-repeat: true
     description:
 
+
+  - title: Zapato
+    filter-folder: /calzado de calle/Zapato
+    filter-name: 
+    description: Aquí te presentamos una pequeña selección de zapatos con los que ir siempre cómodo
+
+
+
+  - title: Calzado Infantil y respetuoso
+    filter-folder: /calzado de calle/Infantil y respetuoso
+    filter-name: infantil
+    filter-name-or: respetuoso
+    description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 
+
+
+
   - title: Clásicos de calle
     filter-folder: /calzado de calle/Clásicos
     filter-name: 
@@ -31,15 +46,9 @@ categories:
     filter-name: 
     description: Chancletas y calzado para el agua, la playa y la piscina
 
-  - title: Abarcas
-    filter-folder: /calzado de calle/Abarca
-    filter-name: 
-    description: Abarcas de goma para recibir a Olentzero
 
-  - title: Zapato
-    filter-folder: /calzado de calle/Zapato
-    filter-name: 
-    description: Aquí te presentamos una pequeña selección de zapatos con los que ir siempre cómodo
+
+
 
   - title: Más calzado de calle
     filter-folder: /calzado de calle/
