@@ -74,14 +74,18 @@ function spa() {
         var bodyRegex = new RegExp(`<${tag}[\\s\\S]*?>([\\s\\S]*?)<\\/${tag}>`,"i");
         console.log(bodyRegex)
         var bodyMatch = bodyRegex.exec(htmlString);
+        console.log(bodyMatch)
         return bodyMatch? bodyMatch[1] : false
     }
 
-    function highlightActive( link ) {
-        if( window.location.href.includes(link.href) ){
-            link.classList.add('active')
-        } else {
-            link.classList.remove('active')
+    function updateLinks() {
+        let links = document.querySelectorAll('a:not(.no-spa):not([href="#"])')
+        for (var i = 0; i < links.length; i++) {
+            if( window.location.href.includes(links[i].href) ){
+                links[i].classList.add('active')
+            } else {
+                links[i].classList.remove('active')
+            }
         }
     }
 
@@ -94,17 +98,14 @@ function spa() {
 
     // first we need to intercept all clicks on our "spa-links" so they don't trigger a page reload.
     // we can then use `history.pushState` so those link clicks still change the url appropriately.
-    function updateLinks() {
-        let links = document.querySelectorAll('a:not(.no-spa):not([href="#"])')
-        for (var i = 0; i < links.length; i++) {
-            highlightActive(links[i])
-            links[i].onclick = function(e){
-                e.preventDefault()
-                history.pushState(null, document.title, e.target.getAttribute('href'))
-                handleNavigation()
-            }
-        }
-    }
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('a:not(.no-spa):not([href="#"])')) {
+        e.preventDefault()
+        history.pushState(null, document.title, e.target.getAttribute('href'))
+        handleNavigation()
+      }
+    })
+
     
 
     // now our handleNavigation callback is reliably fired whenever we need to react to a

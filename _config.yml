@@ -28,8 +28,45 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.calzadosarrieta.com/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+tagline: A short description (e.g., A blog dedicated to reviewing cat gifs) that would be used when page.title is not defined.
+author: Calzados Arrieta
+locale: es_ES
+#twitter:
+#  username: benbalter
+#  card: summary
+#facebook:
+#  app_id: 1234
+#  publisher: 1234
+#  admins: 1234
+#logo: 
+social:
+  name: Calzados Arrieta
+  links:
+    - https://www.facebook.com/p/Calzados-Arrieta-100063896959347/
+webmaster_verifications:
+  google: 1234
+#  facebook: 1234
+seo:
+  name: Calzados Arrieta
+  type: Organization
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/alpargatas.png
+      seo:
+        type: Product
+
+keywords: calzados alpargatas zapatillas
+#title:
+#description: 
+#image:
+
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md
+
+
 
 # Build settings
 theme: minima
