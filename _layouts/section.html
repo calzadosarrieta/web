@@ -1,0 +1,87 @@
+{% include head.html %}
+
+<body>
+
+{% include navbar.html %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{{ page.title }}</h1>
+        <!--<div class="d-inline-flex mb-lg-5">
+        <p class="m-0 text-white"><a class="text-white" href="#">Home</a></p>
+        <p class="m-0 text-white px-2">/</p>
+        <p class="m-0 text-white">Contact</p>
+        </div>-->
+    </div>
+    </div>
+    <!-- Page Header End -->
+
+
+<section class="section-products">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="header">
+                    <h2>Popular Products</h2>
+                    {{ page.content }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in site.static_files %}{% if product.path contains page.filter %}
+            {% assign basename = product.basename | split: "|" %}
+
+            <!-- Start Single Product -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div id="product-1" class="single-product">
+                    <div class="part-1">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                            <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                        </ul>
+                        <div class="part-1-before" style="background: url('{{ product.path | uri_escape }}') no-repeat center; background-size: cover;"></div>
+                    </div>
+                    <div class="part-2">
+                        <h3 class="product-title">{{ basename | slice: 0 }}</h3>
+                        <h4 class="product-old-price">{{ basename | slice: 2 }}</h4>
+                        <h4 class="product-price">{{ basename | slice: 1 }}</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Product -->
+            {% endif %}{% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+    {% include footer.html %}
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
