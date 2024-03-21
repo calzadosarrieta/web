@@ -1,4 +1,4 @@
-(function ($) {
+function original ($) {
     "use strict";
     
     // Dropdown on mouse hover
@@ -57,7 +57,11 @@
         }
     });
     
-})(jQuery);
+}
+
+
+original(jQuery)
+
 
 
 
@@ -66,10 +70,19 @@
 function spa() {
     console.log('activar!')
 
-    function getElement(htmlString){
-        var bodyRegex = /<body[\s\S]*?>([\s\S]*?)<\/body>/i;
+    function getElement(htmlString, tag){
+        var bodyRegex = new RegExp(`<${tag}[\\s\\S]*?>([\\s\\S]*?)<\\/${tag}>`,"i");
+        console.log(bodyRegex)
         var bodyMatch = bodyRegex.exec(htmlString);
         return bodyMatch? bodyMatch[1] : false
+    }
+
+    function highlightActive( link ) {
+        if( window.location.href.includes(link.href) ){
+            link.classList.add('active')
+        } else {
+            link.classList.remove('active')
+        }
     }
 
     updateLinks()
@@ -84,6 +97,7 @@ function spa() {
     function updateLinks() {
         let links = document.querySelectorAll('a:not(.no-spa):not([href="#"])')
         for (var i = 0; i < links.length; i++) {
+            highlightActive(links[i])
             links[i].onclick = function(e){
                 e.preventDefault()
                 history.pushState(null, document.title, e.target.getAttribute('href'))
@@ -104,9 +118,10 @@ function spa() {
         xhr.onreadystatechange = function() {
             if (this.readyState!==4) return;
             if (this.status!==200) return; // or whatever error handling you want
-            let newBody = getElement(this.responseText);
-            document.getElementsByTagName('body')[0].innerHTML = newBody
+            document.getElementsByTagName('body')[0].innerHTML = getElement(this.responseText, 'body');
+            document.title = getElement(this.responseText, 'title') || document.title
             updateLinks()
+            original(jQuery)
         };
         xhr.send();
     }

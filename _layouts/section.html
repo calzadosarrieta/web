@@ -42,7 +42,7 @@
                             <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
                             <li><a href="#"><i class="fas fa-expand"></i></a></li>
                         </ul>
-                        <div class="part-1-before" style="background: url('{{ product.path | uri_escape }}') no-repeat center; background-size: cover;"></div>
+                        <div class="part-1-before" style="background: url('.{{ product.path | uri_escape }}') no-repeat center; background-size: cover;"></div>
                     </div>
                     <div class="part-2">
                         <h3 class="product-title">{{ basename | slice: 0 }}</h3>
