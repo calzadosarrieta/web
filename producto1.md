@@ -1,7 +1,7 @@
 ---
 title: Alpargatas de fiestas
 layout: product
-image: assets/img/alpargatas.png
+image: products/alpargatas/Alpargata abierta con cuña.jpeg
 description: las mejores alpargatas del mundo
 price: 56
 seo_type: Product

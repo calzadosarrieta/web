@@ -34,7 +34,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/alpargatas.png
+      image: assets/images/alpargatas.png
       type: Product
 
 
