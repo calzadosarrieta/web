@@ -1,96 +1,44 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Configuración del sitio
 
 title: Calzados Arrieta
 phone: +34 948 24 30 63
-email: your-email@example.com
+email: calzadosarrieta@gmail.com
 address: C. Paulino Caballero 12, 31003 Pamplona
+
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://calzadosarrieta.github.io/web" # the base hostname & protocol for your site, e.g. http://example.com
-tagline: A short description (e.g., A blog dedicated to reviewing cat gifs) that would be used when page.title is not defined.
+keywords: calzados alpargatas zapatillas
 author: Calzados Arrieta
+
 locale: es_ES
-#twitter:
-#  username: benbalter
-#  card: summary
-#facebook:
-#  app_id: 1234
-#  publisher: 1234
-#  admins: 1234
-#logo: 
-social:
-  name: Calzados Arrieta
-  links:
-    - https://www.facebook.com/p/Calzados-Arrieta-100063896959347/
+street: C. Paulino Caballero 12
+city: Pamplona
+region: Navarra
+zip: 31003
+country: Spain
+latitude: 42.81222518996606
+longitude: -1.64002290369713
+
+logo:
+sameAs:
+  facebook: https://www.facebook.com/p/Calzados-Arrieta-100063896959347
+  google_maps: https://maps.app.goo.gl/1w5eFcZWMwopUFA16
+
 webmaster_verifications:
   google: 1234
-#  facebook: 1234
-seo:
-  name: Calzados Arrieta
-  type: Organization
 
 defaults:
   - scope:
       path: ""
     values:
       image: /assets/images/alpargatas.png
-      seo:
-        type: Product
-
-keywords: calzados alpargatas zapatillas
-#title:
-#description: 
-#image:
-
-# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md
+      type: Product
 
 
-
-# Build settings
+# Build settings (NO TOCAR)
 theme: minima
 plugins:
   - jekyll-seo-tag
-
-
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

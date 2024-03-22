@@ -1,8 +1,7 @@
 ---
 title: Portada
 layout: home
-seo:
-  type: LocalBusiness
+type: LocalBusiness
 ---
 
 This is the content of my page
