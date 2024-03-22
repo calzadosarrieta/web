@@ -57,7 +57,7 @@
       ],
       "logo": "{{ site.logo }}",
       "priceRange": "$$",
-      "image": "{{ site.image }}",
+      "image": "{{ site.url }}/{{ page.image }}",
       "description": "{{ site.description }}",
       "keywords": "{{ site.keywords }}",
       "address": {
@@ -76,7 +76,7 @@
       "hasMap": "{{ site.sameAs.google_maps }}",
       "openingHours": "Mo-Sa 09:30-13:30 Mo-Sa 16:30-20:00",
       "telephone": "{{ site.phone }}",
-      "email": "{{ site.email }}",
+      "email": "{{ site.email }}"
     }
     </script>
 {% endif %}
