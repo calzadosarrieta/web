@@ -1,0 +1,23 @@
+    <!--<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>{{ page.title }} | {{ site.title }}</title>
+<meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+<meta name="author" content="{{ site.author }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta name="description" content="{{ page.description }}" />
+<meta property="og:description" content="{{ page.description }}" />
+<link rel="canonical" href="{{ site.url }}/{{ page.url }}" />
+<meta property="og:url" content="{{ page.url }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="{{ site.url }}/{{ page.image }}" />
+<meta property="twitter:title" content="{{ page.title }} | {{ site.title }}" />
+<meta name="google-site-verification" content="{{ site.webmaster_verifications.google }} " />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","author":{"@type":"Person","name":"Calzados Arrieta"},"description":"{{ page.description }}","headline":"{{ page.title }} | {{ site.title }}","image":"{{ site.url }}/{{ page.image }}","url":"{{ page.url }}",      "offers": {"@type": "Offer","url": "{{ site.url }}/{{ page.url }}",
+        "priceCurrency": "EUR","price": {{ page.price }},"priceValidUntil": "2030-11-20","itemCondition": "https://schema.org/NewCondition","availability": "https://schema.org/InStock"}}
+</script>
+{% if page.seo_type == Product %}
+{% endif %}
+<!-- End Jekyll SEO tag -->
