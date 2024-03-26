@@ -4,20 +4,19 @@
 
 {% include header.html %}
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 300px">
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-0 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 350px; text-align: center">
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{{ page.title }}</h1>
         <div class="d-inline-flex mb-lg-5">
-        <!--<p class="m-0 text-white"><a class="text-white" href="#">Home</a></p>
-        <p class="m-0 text-white px-2">/</p>-->
-        <p class="m-0 text-white">{{ page.content }}</p>
+            <p class="m-0 text-white">{{ page.description }}</p>
+            <p class="m-0 text-white">{{ page.content }}</p>
         </div>
     </div>
-    </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
 
-
+<section class="section-products">
  <!-- Contact Start -->
     <div class="container-fluid pt-2">
         <div class="container">
@@ -27,7 +26,7 @@
             </div>-->
             <div class="row px-3 pb-5">
                 <div class="col-md-6 pb-5">
-                    <div style="background-image: url({{ page.image | uri_escape }}); background-size: contain; background-repeat: no-repeat; width: 100%; height: 443px; border:0;"></div>
+                     <img alt="{{ page.title }} {{ page.price }} {{ page.description }}" src="{{ page.image | absolute_url | uri_escape }}" style="object-fit: cover; object-position: center; width: 100%; height: 443px; border:0;" onclick="previewImage(this)">
                 </div>
                 <div class="col-md-6 pb-5">
                     <div class="contact-form">
@@ -74,13 +73,10 @@
         </div>
     </div>
     <!-- Contact End -->
+</section>
 
 
-    {% include footer.html %}
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+{% include footer.html %}
 
 </body>
 

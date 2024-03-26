@@ -5,18 +5,16 @@
 {% include header.html %}
 
 <!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 position-relative overlay-bottom">
-<div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-    <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{{ page.title }}</h1>
-    <div class="d-inline-flex mb-lg-5">
-        <p class="m-0 text-white">{{ page.description }}</p>
+<div class="container-fluid page-header mb-0 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 350px; text-align: center">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{{ page.title }}</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white">{{ page.description }}</p>
+            <p class="m-0 text-white">{{ page.content }}</p>
+        </div>
     </div>
 </div>
-</div>
 <!-- Page Header End -->
-
-{{ page.content }}
-
 
 {% for category in page.categories %}
 <section class="section-products">
@@ -26,23 +24,23 @@
                 <div class="header">
                     <h2>{{ category.title }}</h2>
                     {{ category.description }}
-                    <input onkeyup="sortProducts(this.value)" minlength="4" maxlength="8" size="10" />
+                    <input onkeyup="sortProducts(this.value)" minlength="4" size="20" />
                 </div>
             </div>
         </div>
         <div class="row grid">
-            {% for product in site.static_files %}{% if product.path contains category.filter %}
-            {% assign basename = product.basename | split: "|" %}
+            {% assign products = site.pages | sort: 'order' | reverse %}
+            {% for product in products %}{% if product.image contains category.filter %}
 
             <!-- Start Single Product -->
-            {% if product.path contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
+            {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
             {% else %}<div class="col-md-6 col-lg-4 col-xl-3">{% endif %}
-                <div class="single-product" data-filter="{{ product.path }}">
+                <div class="single-product" data-filter="{{ product.image }}">
                     <div class="part-1">
-                        {% if product.path contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
-                        {% if product.path contains "novedad" %}<span class="new">Novedad</span>{% endif %}
+                        {% if product.tags contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
+                        {% if product.tags contains "novedad" %}<span class="new">Novedad</span>{% endif %}
                         <ul>
-                            <li><a href="producto1.html"><i class="fas fa-shopping-cart"></i></a></li>
+                            <li><a href="{{ product.url }}"><i class="fas fa-shopping-cart"></i></a></li>
                             <li><a><i class="fas fa-heart"></i></a></li>
                             <li><a onclick="this.parentNode.parentNode.classList.add('sharing')"><i class="fas fa-share-alt"></i></a></li>
                             <li><a onclick="previewImage(this.parentNode.parentNode.nextElementSibling)"><i class="fas fa-expand"></i></a></li>
@@ -52,12 +50,12 @@
                             <li class="share"><a onclick="navigator.clipboard.writeText('...');"><i class="fa fa-clipboard"></i></a></li>
                         </ul>
                         <!--<div class="part-1-before" loading="lazy" style="background: url('.{{ product.path | uri_escape }}') no-repeat center; background-size: cover;"></div>-->
-                        <img class="part-1-before" loading="lazy" alt="{{ basename | slice: 0 }} {{ basename | slice: 1 }} {{ basename | slice: 3 }}" src=".{{ product.path | uri_escape }}" style="object-fit: cover; object-position: center;">
+                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | uri_escape }}" style="object-fit: cover; object-position: center;">
                     </div>
                     <div class="part-2">
-                        <h3 class="product-title">{{ basename | slice: 0 }}</h3>
+                        <h3 class="product-title">{{ product.title }}</h3>
                         <h4 class="product-old-price">{{ basename | slice: 2 }}</h4>
-                        <h4 class="product-price">{{ basename | slice: 1 }}</h4>
+                        <h4 class="product-price">{{ product.price }}</h4>
                     </div>
                 </div>
             </div>
@@ -68,18 +66,7 @@
 </section>
 {% endfor %}
 
-
-<!-- Image Preview Modal https://www.w3schools.com/howto/howto_css_modal_images.asp-->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-
-    {% include footer.html %}
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+{% include footer.html %}
 
 </body>
 

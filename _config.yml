@@ -16,6 +16,8 @@ zip: 31003
 country: Spain
 latitude: 42.81222518996606
 longitude: -1.64002290369713
+icon: assets/img/favicon.ico
+
 
 logo:
 sameAs:
@@ -30,11 +32,10 @@ defaults:
       path: ""
     values:
       image: assets/img/alpargatas.png
-      type: Product
       keywords: calzados alpargatas zapatillas
 
 
-#baseurl: "/web" # the subpath of your site, e.g. /blog
+baseurl: "/web" # the subpath of your site, e.g. /blog
 url: "https://calzadosarrieta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 

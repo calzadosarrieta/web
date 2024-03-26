@@ -10,7 +10,7 @@
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
     
     <!-- Favicon -->
-    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="{{ page.icon | default: site.icon | absolute_url }}" rel="icon">
 
     <!-- Open Graph --> 
     <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
@@ -33,7 +33,7 @@
     <meta property="twitter:title" content="{{ page.title }} - {{ site.title }}" />
 
     <!-- JSON+LD SCHEMA -->
-    {% if page.seo_type == "Product" %}
+    {% if page.layout == "product" %}
     <script type="application/ld+json">
     {
       "@context":"https://schema.org",
