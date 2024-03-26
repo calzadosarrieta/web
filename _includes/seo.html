@@ -31,6 +31,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="{{ page.image | absolute_url | uri_escape }}" />
     <meta property="twitter:title" content="{{ page.title }} - {{ site.title }}" />
+    <meta property="twitter:domain" content="{{ site.url }}">
+    <meta property="twitter:url" content="{{ page.url | absolute_url }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+
 
     <!-- JSON+LD SCHEMA -->
     {% if page.layout == "product" %}
@@ -47,7 +51,7 @@
         "@type": "Offer",
         "url": "{{ page.url | absolute_url }}",
         "priceCurrency": "EUR",
-        "price": {{ page.price }},
+        "price": {{ page.price | default: 0 }},
         "priceValidUntil": "2030-11-20",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock"
