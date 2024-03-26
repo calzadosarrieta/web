@@ -183,7 +183,6 @@ function sortProducts(query){
     for (var i = 0; i < products.length; i++) {
         let filter = cleanString(products[i].dataset.filter)
         let matches = query.filter((word) => filter.includes(word)).length;
-        console.log(filter, query, matches)
         products[i].parentNode.style.order = - matches
         products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
     }
