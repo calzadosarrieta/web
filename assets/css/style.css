@@ -9966,3 +9966,9 @@ h6,
     color: red;
     font-size: small;
 }
+
+form.success:after {
+    content: attr(data-success);
+    color: blue;
+    font-size: small;
+}

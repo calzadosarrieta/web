@@ -149,6 +149,9 @@ function sendForm(selector){
     }
     // Clear
     for (var i = 0; i < fields.length; i++) { fields[i].value = '' }
+    let form = document.querySelector(selector)
+    form.classList.add('success')
+    form.dataset.success = 'Gracias por tu mensaje!'
     console.log(message)
 }
 
