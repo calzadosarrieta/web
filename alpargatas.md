@@ -1,7 +1,14 @@
 ---
 title: Alpargatas
 layout: section
-filter: products/alpargatas
+categories:
+  - title: Cuñas
+    filter: /alpargatas/
+    description: Cuñas suuuper molonas
+
+  - title: Alpargatas planas
+    filter: cuña
+    description: Tambien mola mucha ir sin cuñas...
 ---
 
-This is the content of my page
+estas son mis alpargatas bla blab 

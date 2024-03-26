@@ -32,10 +32,10 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev no-spa" href="#blog-carousel" data-slide="prev">
+            <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </a>
-            <a class="carousel-control-next no-spa" href="#blog-carousel" data-slide="next">
+            <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
@@ -140,7 +140,7 @@
     <!-- Offer Start -->
     <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
         <div class="container py-1">
-            <h1 class="display-3 text-primary mt-3">Calidad garantizada </h1>
+            <h1 class="display-3 text-primary mt-3">Calidad garantizada</h1>
             <h1 class="text-white mb-3">Producto 100% nacional</h1>
             <h4 class="text-white font-weight-normal mb-4 pb-3">Todos nuestros productos son de origen nacional</h4>
             <!--<form class="form-inline justify-content-center mb-4">
@@ -164,71 +164,45 @@
                 <h1 class="display-4">Calidad al mejor precio</h1>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="mb-5">Alpargatas</h1>
+                <div class="col-lg-6 top6">
+                    <h1 class="mb-5">{{ page.featured.title1 }}</h1>
+
+                    {% for product in site.static_files %}{% if product.path contains page.featured.filter1 %}
+                    {% assign basename = product.basename | split: "|" %}
+                    <!-- Begin producto destacado -->
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-1.jpg" alt="">
-                            <h5 class="menu-price">$5</h5>
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src=".{{ product.path | uri_escape }}" alt="{{ product.basename }}" style="object-fit: cover; aspect-ratio: 1;">
+                            <h5 class="menu-price">{{ basename | slice: 1 }}</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Black Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                            <h4>{{ basename | slice: 0 }}</h4>
+                            <p class="m-0">{{ basename | slice: 3 }}</p>
                         </div>
                     </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-2.jpg" alt="">
-                            <h5 class="menu-price">$7</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Chocolete Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-3.jpg" alt="">
-                            <h5 class="menu-price">$9</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Coffee With Milk</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
+                    <!-- End producto destacado -->
+                    {% endif %}{% endfor %}
+
                 </div>
-                <div class="col-lg-6">
-                    <h1 class="mb-5">Zapatillas</h1>
+                <div class="col-lg-6 top6">
+                    <h1 class="mb-5">{{ page.featured.title2 }}</h1>
+
+                    {% for product in site.static_files %}{% if product.path contains page.featured.filter2 %}
+                    {% assign basename = product.basename | split: "|" %}
+                    <!-- Begin producto destacado -->
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-1.jpg" alt="">
-                            <h5 class="menu-price">$5</h5>
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src=".{{ product.path | uri_escape }}" alt="{{ product.basename }}" style="object-fit: cover; aspect-ratio: 1;">
+                            <h5 class="menu-price">{{ basename | slice: 1 }}</h5>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <h4>Black Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                            <h4>{{ basename | slice: 0 }}</h4>
+                            <p class="m-0">{{ basename | slice: 3 }}</p>
                         </div>
                     </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-2.jpg" alt="">
-                            <h5 class="menu-price">$7</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Chocolete Coffee</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="assets/img/menu-3.jpg" alt="">
-                            <h5 class="menu-price">$9</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>Coffee With Milk</h4>
-                            <p class="m-0">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
-                        </div>
-                    </div>
+                    <!-- End producto destacado -->
+                    {% endif %}{% endfor %}
+
                 </div>
             </div>
         </div>
@@ -388,7 +362,7 @@
                 <h1 class="display-4">La opinión de nuestros clientes</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
-                {% for review in site.data.reviews %}
+                {% for review in page.reviews %}
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
                         <img class="img-fluid" src="{{ review.img }}" alt="">

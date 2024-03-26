@@ -1,28 +1,36 @@
 <!-- Begin SEO -->
-    <title>{{ page.title }} | {{ site.title }}</title>
-    {% assign image = site.url | append: '/' | append: page.image | uri_escape %}
+    {% if page.redirect %}
+    <meta http-equiv="refresh" content="0; url={{ page.redirect | absolute_url }}">
+    <script type="text/javascript">window.location.href = "{{ page.redirect | absolute_url }}"</script>
+    <link rel="canonical" href="{{ page.redirect | absolute_url }}" />
+    {% endif %}
+
+    <!-- Title -->
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- Open Graph --> 
-    <meta property="og:title" content="{{ page.title }} | {{ site.title }}" />
+    <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
     <meta property="og:locale" content="{{ site.locale }}" />
-    <meta property="og:url" content="{{ site.url }}/{{ page.url }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
     <meta property="og:site_name" content="{{ site.title }}" />
-    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:image" content="{{ page.image | absolute_url | uri_escape }}" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ page.description | default: site.description }}" />
 
-
     <!-- Other meta -->
-    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="keywords" content="{{ page.keywords }}">
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="author" content="{{ site.author }}" />
     <meta name="google-site-verification" content="{{ site.webmaster_verifications.google }} " />
-    <link rel="canonical" href="{{ site.url }}/{{ page.url }}" />
 
     <!-- Twitter meta -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:image" content="{{ image }}" />
-    <meta property="twitter:title" content="{{ page.title }} | {{ site.title }}" />
+    <meta property="twitter:image" content="{{ page.image | absolute_url | uri_escape }}" />
+    <meta property="twitter:title" content="{{ page.title }} - {{ site.title }}" />
 
     <!-- JSON+LD SCHEMA -->
     {% if page.seo_type == "Product" %}
@@ -31,13 +39,13 @@
       "@context":"https://schema.org",
       "@type":"Product",
       "name":"{{ page.title  }}",
-      "description":"{{ page.description }}",
-      "headline":"{{ page.title }} | {{ site.title }}",
-      "image":"{{ image }}",
-      "url":"{{ page.url }}",
+      "description":"{{ page.description | default: site.description }}",
+      "headline":"{{ page.title }} - {{ site.title }}",
+      "image":"{{ page.image | absolute_url | uri_escape }}",
+      "url":"{{ page.url | absolute_url}}",
       "offers": {
         "@type": "Offer",
-        "url": "{{ site.url }}/{{ page.url }}",
+        "url": "{{ page.url | absolute_url }}",
         "priceCurrency": "EUR",
         "price": {{ page.price }},
         "priceValidUntil": "2030-11-20",
@@ -58,9 +66,9 @@
       ],
       "logo": "{{ site.logo }}",
       "priceRange": "$$",
-      "image": "{{ image }}",
-      "description": "{{ site.description }}",
-      "keywords": "{{ site.keywords }}",
+      "image": "{{ page.image | absolute_url | uri_escape }}",
+      "description": "{{ page.description | default: site.description }}",
+      "keywords": "{{ page.keywords }}",
       "address": {
          "@type": "PostalAddress",
          "streetAddress": "{{ site.street }}",

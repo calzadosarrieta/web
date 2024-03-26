@@ -60,74 +60,175 @@ function original ($) {
 }
 
 
-original(jQuery)
-
-
 
 
 /*https://gist.github.com/JCPedroza/04d13c652c1c83e32097d9b5a1b58f30*/
 
-function spa() {
-    console.log('activar!')
 
+(function () {
+    console.log('Activate Single Page Application!')
+    let currentPath = location.pathname
+
+    // Extract tag from html string
     function getElement(htmlString, tag){
         var bodyRegex = new RegExp(`<${tag}[\\s\\S]*?>([\\s\\S]*?)<\\/${tag}>`,"i");
-        console.log(bodyRegex)
         var bodyMatch = bodyRegex.exec(htmlString);
-        console.log(bodyMatch)
         return bodyMatch? bodyMatch[1] : false
     }
 
-    function updateLinks() {
-        let links = document.querySelectorAll('a:not(.no-spa):not([href="#"])')
-        for (var i = 0; i < links.length; i++) {
-            if( window.location.href.includes(links[i].href) ){
-                links[i].classList.add('active')
-            } else {
-                links[i].classList.remove('active')
-            }
-        }
-    }
-
-    updateLinks()
-
-    // next we need to subscribe to "popstate" which let's us know when the user has clicked the 
-    // "back" or "forward" button on their browser
+    // Subscribe to "popstate" aka clicks to "back" or "forward" button on their browser
     window.addEventListener('popstate', handleNavigation)
 
-
-    // first we need to intercept all clicks on our "spa-links" so they don't trigger a page reload.
+    // Intercept all clicks on links so they don't trigger a page reload.
     // we can then use `history.pushState` so those link clicks still change the url appropriately.
     document.addEventListener('click', (e) => {
-      if (e.target.matches('a:not(.no-spa):not([href="#"])')) {
-        e.preventDefault()
-        history.pushState(null, document.title, e.target.getAttribute('href'))
-        handleNavigation()
-      }
+        let href = e.target.href
+        if (!href) return
+        let url = new URL(href)
+
+        // If same origin, but different path, use SPA navigation    
+        if (url.origin === location.origin && url.pathname !== location.pathname ) {
+            e.preventDefault()
+            history.pushState(null, document.title, href)
+            handleNavigation()
+        }
     })
 
-    
-
-    // now our handleNavigation callback is reliably fired whenever we need to react to a
-    // a SPA navigation action. We can define it however we want.
-    function handleNavigation(argument) {
-        let path = window.location.pathname
-        path = path.replace('http://127.0.0.1:4000/','https://arrietaeguren.es/calzadosarrieta')
-        console.log('enviar!', path)
+    // handleNavigation callback is fired whenever we need to react to a SPA navigation action.
+    function handleNavigation(e) {
+        // If we have not changed the path, skip processing
+        if( currentPath == location.pathname ) return
+        // Now route accordingly
+        console.log('Routing SPA to:', location.pathname)
         var xhr= new XMLHttpRequest();
-        xhr.open('GET', path, true);
+        xhr.open('GET', location.pathname, true);
         xhr.onreadystatechange = function() {
-            if (this.readyState!==4) return;
-            if (this.status!==200) return; // or whatever error handling you want
-            document.getElementsByTagName('body')[0].innerHTML = getElement(this.responseText, 'body');
+            if (this.readyState!==4 || this.status!==200){
+                return; // TODO: smarter error handling
+            }
+            // Update path
+            document.body.innerHTML = getElement(this.responseText, 'body');
             document.title = getElement(this.responseText, 'title') || document.title
-            updateLinks()
-            original(jQuery)
+            currentPath = location.pathname
+            window.dispatchEvent(new Event("load"));
+
+            // Handle hash
+            if (location.hash && document.getElementById( location.hash )) {
+                document.getElementById( location.hash ).scrollIntoView();
+            } else {
+                window.scrollTo({ top: 0 });    
+            }   
         };
         xhr.send();
     }
+    
+})();
 
+
+window.onload = function (){
+    updateActiveLink()
+    original(jQuery)
 }
 
-spa()
 
+
+// Contact form
+function sendForm(selector){
+    let fields = document.querySelectorAll( selector + ' :is(input, select, textarea)')
+    let message = {}
+    for (var i = 0; i < fields.length; i++) {
+        let key = fields[i].name || fields[i].id
+        if (fields[i].required && !fields[i].value) {
+            fields[i].parentNode.classList.add('required')
+            fields[i].parentNode.dataset.required = 'Por favor, introduce tu ' + key
+            return
+        } else {
+            fields[i].parentNode.classList.remove('required')
+        }
+        message[key] = fields[i].value
+    }
+    // Clear
+    for (var i = 0; i < fields.length; i++) { fields[i].value = '' }
+    console.log(message)
+}
+
+
+// Update active link
+function updateActiveLink() {
+    let links = document.querySelectorAll('a')
+    for (var i = 0; i < links.length; i++) {
+        if( window.location.href.includes(links[i].href) ){
+            links[i].classList.add('active')
+        } else {
+            links[i].classList.remove('active')
+        }
+    }
+}
+
+
+
+function sortProducts(query){
+    let products = document.getElementsByClassName('single-product')
+    for (var i = 0; i < products.length; i++) {
+        console.log(products[i].dataset.filter)
+        let similarity = stringSimilarity(products[i].dataset.filter, query)
+        console.log(products[i].dataset.filter, query, similarity)
+        products[i].parentNode.style.order = - Math.round( similarity * 100)
+        products[i].parentNode.style.display = similarity < 0.05? 'none' : 'block'
+    }
+}
+
+                /* Calculate similarity between two strings https://github.com/stephenjjbrown/string-similarity-js*/
+var stringSimilarity = function (str1, str2, substringLength, caseSensitive) {
+    if (substringLength === void 0) { substringLength = 2; }
+    if (caseSensitive === void 0) { caseSensitive = false; }
+    if (!caseSensitive) {
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+    }
+    if (str1.length < substringLength || str2.length < substringLength)
+        return 0;
+    var map = new Map();
+    for (var i = 0; i < str1.length - (substringLength - 1); i++) {
+        var substr1 = str1.substr(i, substringLength);
+        map.set(substr1, map.has(substr1) ? map.get(substr1) + 1 : 1);
+    }
+    var match = 0;
+    for (var j = 0; j < str2.length - (substringLength - 1); j++) {
+        var substr2 = str2.substr(j, substringLength);
+        var count = map.has(substr2) ? map.get(substr2) : 0;
+        if (count > 0) {
+            map.set(substr2, count - 1);
+            match++;
+        }
+    }
+    return (match * 2) / (str1.length + str2.length - ((substringLength - 1) * 2));
+};
+
+
+
+
+/* IMAGE MODAL */
+function previewImage(img) {
+    // Get the modal
+    var modal = document.getElementById("myModal")
+    
+    // Show the modal
+    document.getElementById("img01").src = img.src;
+    modal.style.display = 'block';
+    document.getElementById("caption").innerText = img.alt
+    
+    // Close the modal
+    modal.onclick = function() {
+      modal.style.display = "none";
+    }
+    document.body.addEventListener('keydown', function(e) {
+      if (e.key == "Escape") modal.style.display = "none";
+    });
+}
+
+/* SHARE */
+
+function showShare(elem) {
+    // body...
+}
