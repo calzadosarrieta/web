@@ -31,8 +31,9 @@ defaults:
   - scope:
       path: ""
     values:
-      image: img/alpargatas.webp
-      keywords: calzados alpargatas zapatillas
+      image: img/carousel-1.webp
+      keywords: calzados alpargatas zapatillas # ignored by Google
+      description: Calzados Arrieta, la mejor tienda de zapatillas y alpargatas en Pamplona...
 
 
 baseurl: "/web" # the subpath of your site, e.g. /blog
