@@ -6,15 +6,20 @@
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header mb-0 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 350px; text-align: center">
-        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{{ page.title }}</h1>
-        <div class="d-inline-flex mb-lg-5">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px; text-align: center">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-3 text-white text-uppercase">{{ page.title }}</h1>
+        <div class="d-inline-flex mb-2">
             <p class="m-0 text-white">{{ page.description }}</p>
             <p class="m-0 text-white">{{ page.content }}</p>
+        </div>
+        <div class="contact-form mt-3">
+            <input onkeyup="sortProducts(this.value)" type="text" class="form-control p-4" name="query" placeholder="Busca tus zapatillas ideales..."/>
         </div>
     </div>
 </div>
 <!-- Page Header End -->
+
+
 
 {% for category in page.categories %}
 <section class="section-products">
@@ -24,7 +29,6 @@
                 <div class="header">
                     <h2>{{ category.title }}</h2>
                     {{ category.description }}
-                    <input onkeyup="sortProducts(this.value)" minlength="4" size="20" />
                 </div>
             </div>
         </div>

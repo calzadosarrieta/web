@@ -3,10 +3,8 @@ title: Portada
 layout: home
 type: LocalBusiness
 featured:
-  title1: Oferta
-  filter1: oferta
-  title2: Alpargatas
-  filter2: alpargatas
+  title: Alpargatas
+  filter: alpargata
 reviews:
   - name: Sara Eguiguren
     text: Es una zapatería de las de toda la vida, especialista en zapatillas de casa. Da gusto venir a comprar aqui con lo bien que te atienden. Yo sin duda repetiré.
