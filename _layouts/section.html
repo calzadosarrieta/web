@@ -16,15 +16,15 @@
 </div>
 <!-- Page Header End -->
 
-<div class="container sticky mt-5 row align-items-center" style="margin: auto;">
-    <div class="contact-form col-md-6" style="margin: auto;">
+<div id="searchBox" class="container row mt-1 align-items-center" style="margin: auto;">
+    <div class="contact-form col-md-6 mt-4" style="margin: auto;">
             <input onkeyup="sortProducts(this.value)" type="text" class="form-control p-4" name="query" placeholder="Busca tus zapatillas ideales..."/>
         </div>
 </div>
 
 
 {% for category in page.categories %}
-<section class="section-products">
+<section class="section-products pt-4">
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-md-8 col-lg-6">

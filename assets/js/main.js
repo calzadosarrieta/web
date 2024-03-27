@@ -186,6 +186,10 @@ function sortProducts(query){
         products[i].parentNode.style.order = - matches
         products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
     }
+
+    let box = document.getElementById('searchBox')
+    if (box) box.scrollIntoView({ behavior: "smooth"});
+    
 }
 
 
