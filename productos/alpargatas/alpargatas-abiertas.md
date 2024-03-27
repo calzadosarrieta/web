@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargatas abiertas
-image: img/productos/alpargatas/Alpargatas abiertas.jpeg
+image: img/productos/alpargatas/Alpargatas abiertas.webp
 price: 
 tags: 
 description: 

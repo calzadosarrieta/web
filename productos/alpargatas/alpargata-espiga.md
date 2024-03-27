@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata espiga
-image: img/productos/alpargatas/Alpargata espiga.jpeg
+image: img/productos/alpargatas/Alpargata espiga.webp
 price: 
 tags: 
 description: 

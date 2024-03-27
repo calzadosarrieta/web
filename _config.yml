@@ -31,7 +31,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: img/alpargatas.png
+      image: img/alpargatas.webp
       keywords: calzados alpargatas zapatillas
 
 

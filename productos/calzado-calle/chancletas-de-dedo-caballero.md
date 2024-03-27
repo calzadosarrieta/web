@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Chancletas de dedo caballero
-image: img/productos/calzado-calle/Chancletas de dedo caballero.jpeg
+image: img/productos/calzado-calle/Chancletas de dedo caballero.webp
 price: 
 tags: 
 description: 

@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla destalonada de verano
-image: img/productos/zapatillas-caballero/Zapatilla destalonada de verano.jpeg
+image: img/productos/zapatillas-caballero/Zapatilla destalonada de verano.webp
 price: 
 tags: 
 description: 
