@@ -9846,6 +9846,12 @@ h6,
 .top10 div:nth-of-type(1n+11) { display: none;}
 .top12 div:nth-of-type(1n+13) { display: none;}
 
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
 
 /*
 --breakpoint-xs: 0;
