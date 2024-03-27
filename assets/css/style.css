@@ -9549,12 +9549,12 @@ h6,
 
 .overlay-top::before {
   top: -1px;
-  background: url(../img/overlay-top.png);
+  background: url(../../img/overlay-top.png);
 }
 
 .overlay-bottom::after {
   bottom: -1px;
-  background: url(../img/overlay-bottom.png);
+  background: url(../../img/overlay-bottom.png);
 }
 
 .carousel-caption {
@@ -9648,16 +9648,22 @@ h6,
 .offer,
 .parallax,
 .footer {
-  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/bg.jpg);
-  background-position: top;
+  background: linear-gradient(rgba(51, 33, 29, 0.7), rgba(51, 33, 29, 0.5)), url(../../img/bg.jpg);
+  /*background-position: top;*/
   background-repeat: no-repeat;
   background-size: cover;
-
-    background-attachment: fixed;
+  
+  background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
+
+
+@media only screen and (max-width: 700px){
+  .carousel-item .parallax {
+    background-attachment: inherit;
+  }
+}
+
 
 
 

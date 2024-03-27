@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatillas Vulladi de felpa con cuña _28Eu
-image: products/zapatilla-senora-verano/Zapatillas Vulladi de felpa con cuña _28Eu.jpeg
+image: img/productos/zapatilla-senora-verano/Zapatillas Vulladi de felpa con cuña _28Eu.jpeg
 price: 
 tags: 
 description: 

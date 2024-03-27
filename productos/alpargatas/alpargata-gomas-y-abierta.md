@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata gomas y abierta
-image: products/alpargatas/Alpargata gomas y abierta.jpeg
+image: img/productos/alpargatas/Alpargata gomas y abierta.jpeg
 price: 
 tags: 
 description: 

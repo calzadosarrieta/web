@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Dr
-image: products/pies-delicados/Dr. Cutillas sin velcro (Verano)
+image: img/productos/pies-delicados/Dr. Cutillas sin velcro (Verano)
 price: 
 tags: 
 description: 

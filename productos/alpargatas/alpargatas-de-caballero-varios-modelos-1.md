@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargatas de caballero varios modelos (1)
-image: products/alpargatas/Alpargatas de caballero varios modelos (1).jpeg
+image: img/productos/alpargatas/Alpargatas de caballero varios modelos (1).jpeg
 price: 
 tags: 
 description: 

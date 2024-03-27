@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatillas cerradas I Like the Night_29Eu
-image: products/zapatillas-senora-invierno/Zapatillas cerradas I Like the Night_29Eu.jpeg
+image: img/productos/zapatillas-senora-invierno/Zapatillas cerradas I Like the Night_29Eu.jpeg
 price: 
 tags: 
 description: 

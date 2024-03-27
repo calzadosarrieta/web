@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Calzado deportivo en varios colores
-image: products/calzado-calle/Calzado deportivo en varios colores. Consúltanos
+image: img/productos/calzado-calle/Calzado deportivo en varios colores. Consúltanos
 price: 
 tags: 
 description: 

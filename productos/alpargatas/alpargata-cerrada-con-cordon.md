@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata cerrada con cordón
-image: products/alpargatas/Alpargata cerrada con cordón.jpeg
+image: img/productos/alpargatas/Alpargata cerrada con cordón.jpeg
 price: 
 tags: 
 description: 

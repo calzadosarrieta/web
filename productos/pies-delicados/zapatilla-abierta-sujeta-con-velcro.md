@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla abierta sujeta  con velcro
-image: products/pies-delicados/Zapatilla abierta sujeta  con velcro. Anchura y suavidad para tus pies
+image: img/productos/pies-delicados/Zapatilla abierta sujeta  con velcro. Anchura y suavidad para tus pies
 price: 
 tags: 
 description: 

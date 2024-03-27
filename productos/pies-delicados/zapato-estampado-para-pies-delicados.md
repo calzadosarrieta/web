@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapato estampado para pies delicados
-image: products/pies-delicados/Zapato estampado para pies delicados.jpeg
+image: img/productos/pies-delicados/Zapato estampado para pies delicados.jpeg
 price: 
 tags: 
 description: 

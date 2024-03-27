@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla destalonada con dibujos _27Eu
-image: products/zapatilla-senora-verano/Zapatilla destalonada con dibujos _27Eu.jpeg
+image: img/productos/zapatilla-senora-verano/Zapatilla destalonada con dibujos _27Eu.jpeg
 price: 
 tags: 
 description: 

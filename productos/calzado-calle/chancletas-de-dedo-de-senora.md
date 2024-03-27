@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Chancletas de dedo de Señora
-image: products/calzado-calle/Chancletas de dedo de Señora.jpeg
+image: img/productos/calzado-calle/Chancletas de dedo de Señora.jpeg
 price: 
 tags: 
 description: 

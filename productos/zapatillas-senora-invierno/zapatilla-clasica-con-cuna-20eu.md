@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla clásica con cuña_20Eu
-image: products/zapatillas-senora-invierno/Zapatilla clásica con cuña_20Eu.jpeg
+image: img/productos/zapatillas-senora-invierno/Zapatilla clásica con cuña_20Eu.jpeg
 price: 
 tags: 
 description: 

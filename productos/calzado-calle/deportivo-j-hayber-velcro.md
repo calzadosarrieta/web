@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Deportivo J`Hayber velcro
-image: products/calzado-calle/Deportivo J`Hayber velcro.jpeg
+image: img/productos/calzado-calle/Deportivo J`Hayber velcro.jpeg
 price: 
 tags: 
 description: 

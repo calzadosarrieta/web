@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata roja para fiestas
-image: products/alpargatas/Alpargata roja para fiestas.jpeg
+image: img/productos/alpargatas/Alpargata roja para fiestas.jpeg
 price: 
 tags: 
 description: 

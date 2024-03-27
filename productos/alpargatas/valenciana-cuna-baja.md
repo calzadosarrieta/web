@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Valenciana cuña baja
-image: products/alpargatas/Valenciana cuña baja.jpeg
+image: img/productos/alpargatas/Valenciana cuña baja.jpeg
 price: 
 tags: 
 description: 

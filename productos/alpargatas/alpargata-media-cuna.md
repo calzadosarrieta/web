@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata media cuña
-image: products/alpargatas/Alpargata media cuña.jpeg
+image: img/productos/alpargatas/Alpargata media cuña.jpeg
 price: 
 tags: 
 description: 

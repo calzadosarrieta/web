@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata cerradas
-image: products/alpargatas/Alpargata cerradas. Perfectas para salir a caminar
+image: img/productos/alpargatas/Alpargata cerradas. Perfectas para salir a caminar
 price: 
 tags: 
 description: 

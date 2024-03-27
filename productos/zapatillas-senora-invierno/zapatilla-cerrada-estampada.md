@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla cerrada estampada
-image: products/zapatillas-senora-invierno/Zapatilla cerrada estampada. Suela gruesa_15Eu
+image: img/productos/zapatillas-senora-invierno/Zapatilla cerrada estampada. Suela gruesa_15Eu
 price: 
 tags: 
 description: 

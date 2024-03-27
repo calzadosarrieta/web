@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Alpargata trenzada
-image: products/alpargatas/Alpargata trenzada.jpeg
+image: img/productos/alpargatas/Alpargata trenzada.jpeg
 price: 
 tags: 
 description: 

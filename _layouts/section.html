@@ -50,7 +50,7 @@
                             <li class="share"><a onclick="navigator.clipboard.writeText('...');"><i class="fa fa-clipboard"></i></a></li>
                         </ul>
                         <!--<div class="part-1-before" loading="lazy" style="background: url('.{{ product.path | uri_escape }}') no-repeat center; background-size: cover;"></div>-->
-                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | uri_escape }}" style="object-fit: cover; object-position: center;">
+                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}" style="object-fit: cover; object-position: center;">
                     </div>
                     <div class="part-2">
                         <h3 class="product-title">{{ product.title }}</h3>

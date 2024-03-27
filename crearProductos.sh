@@ -2,7 +2,7 @@
 
 
 # String to replace
-origin="products"
+origin="img/productos"
 destination="productos"
 
 # https://gist.github.com/oneohthree/f528c7ae1e701ad990e6

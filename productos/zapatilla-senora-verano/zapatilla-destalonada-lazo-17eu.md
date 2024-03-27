@@ -1,7 +1,7 @@
 ---
 layout: product
 title: Zapatilla destalonada lazo_17Eu
-image: products/zapatilla-senora-verano/Zapatilla destalonada lazo_17Eu.jpeg
+image: img/productos/zapatilla-senora-verano/Zapatilla destalonada lazo_17Eu.jpeg
 price: 
 tags: 
 description: 
