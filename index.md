@@ -32,7 +32,7 @@ values:
 
   - title: Trato humano
     description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-    image: img/familiar_cropped.webp
+    image: img/personalizada.webp
     icon: fa fa-award 
 
   - title: Tradición familiar
