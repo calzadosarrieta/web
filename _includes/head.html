@@ -7,15 +7,12 @@
 
     {% include seo.html %}
 
-    <!-- Google Font -->
-    <link defer rel="preconnect" href="https://fonts.gstatic.com">
-    <link defer href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Efficiently load non-critical CSS https://www.filamentgroup.com/lab/load-css-simpler/ -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ 'assets/lib/owlcarousel/assets/owl.carousel.min.css' | absolute_url }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"> 
 
-    <!-- Font Awesome -->
-    <link defer href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{{ 'assets/lib/owlcarousel/assets/owl.carousel.min.css' | absolute_url }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ 'assets/css/style.css' | absolute_url }}" rel="stylesheet">
