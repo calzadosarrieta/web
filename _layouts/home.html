@@ -40,11 +40,11 @@
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Historia</h1>
                     <p>Te damos la bienvenida a nuestro pequeño comercio. Fundado en el año 1946, distintas generaciones de nuestra familia trabajamos para ofrecerte calidad y atención personalizada. Para ello apostamos por productos de fabricación nacional y larga trayectoria en el mercado. Nuestra estrategia combina la calidad y el conocimiento del producto, con precios ajustados para que vuelvas siempre que quieras. Queremos seguir cuidando de tus pies y de los de los tuyos.</p>
-                    <a href="#" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                    <!--<a href="#" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>-->
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img alt="Nuestra historia, tradición alpargatera y zapatillera" class="position-absolute w-100 h-100" src="img/alpargatas.webp" style="object-fit: contain;">
+                        <img loading="lazy" alt="Nuestra historia, tradición alpargatera y zapatillera" class="position-absolute w-100 h-100" src="img/alpargatas.webp" style="object-fit: contain;">
                     </div>
                 </div>
                 <div class="col-lg-4 py-0 py-lg-5">
@@ -53,7 +53,7 @@
                     {% for value in page.values %}
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>{{ value.title }}</h5>
                     {% endfor %}
-                    <a href="#" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                    <!--<a href="#" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>-->
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 <div class="col-lg-6 mb-5">
                     <div class="row align-items-center">
                         <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="{{ value.image || absolute_uri }}" alt="{{ value.title }}">
+                            <img loading="lazy" class="img-fluid mb-3 mb-sm-0" src="{{ value.image || absolute_uri }}" alt="{{ value.title }}">
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="{{ value.icon }} service-icon"></i>{{ value.title }}</h4>
@@ -114,7 +114,7 @@
                 <div class="col-lg-6">
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src=".{{ product.path | uri_escape }}" alt="{{ product.basename }}" style="object-fit: cover; aspect-ratio: 1;">
+                            <img loading="lazy" class="w-100 rounded-circle mb-3 mb-sm-0" src=".{{ product.path | uri_escape }}" alt="{{ product.basename }}" style="object-fit: cover; aspect-ratio: 1;">
                             <h5 class="menu-price">{{ basename | slice: 1 }}</h5>
                         </div>
                         <div class="col-8 col-sm-9">
@@ -233,7 +233,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 pb-5">
-                    <iframe title="Encuentranos en Google Maps" loading="lazy" style="width: 100%; height: 443px; border:0;"
+                    <iframe title="Encuentranos en Google Maps" style="width: 100%; height: 443px; border:0;"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11707.451706545557!2d-1.6398727!3d42.8123826!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092559cbe36fb%3A0xef1ae653672dd51e!2sCalzados%20Arrieta!5e0!3m2!1sen!2ses!4v1710943114076!5m2!1sen!2ses"
                         frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -278,7 +278,7 @@
                 {% for review in page.reviews %}
                 <div class="testimonial-item">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid" src="{{ review.img }}" alt="{{ review.name }}: {{ review.text }}">
+                        <img loading="lazy" class="img-fluid" src="{{ review.img }}" alt="{{ review.name }}: {{ review.text }}">
                         <div class="ml-3">
                             <h4>{{ review.name }}</h4>
                             <i>{{ review.role }}</i>
