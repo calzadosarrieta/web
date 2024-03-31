@@ -46,13 +46,10 @@ reviews:
     img: https://lh3.googleusercontent.com/a-/ALV-UjXhd_timsSP0SHX_W6FPlkJhLUO9D6K-JJdJgynMW-6WtU=s40-c-rp-mo-ba4-br100
     role: Guía local
 
-  - name: Parker Mooreeeezñxlñaldjgañdlfkasdf
+  - name: Parker Einstein
     text: parkr
 
   - name: Liu Fengyun
-    text: liufengyun
-
-  - name: Sandra arrieta
     text: liufengyun
 ---
 

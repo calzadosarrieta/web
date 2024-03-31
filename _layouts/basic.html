@@ -1,0 +1,29 @@
+{% include head.html %}
+
+<body>
+
+{% include header.html %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-0 position-relative overlay-bottom">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 350px; text-align: center">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-3 text-white">{{ page.title }}</h1>
+        <div class="d-inline-flex mb-2">
+            <p class="m-0 text-white">{{ page.description }}</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<section class="section-products">
+    <div class="container">
+        {{ content }}
+    </div>
+</section>
+
+
+{% include footer.html %}
+
+</body>
+
+</html>

@@ -45,5 +45,8 @@ url: "https://calzadosarrieta.github.io" # the base hostname & protocol for your
 
 # Build settings (NO TOCAR)
 theme: minima
+sass:
+#  style: compressed
+  sass_dir: _sass
 plugins:
   - jekyll-seo-tag

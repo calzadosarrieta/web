@@ -10,5 +10,3 @@ categories:
     filter: cuña
     description: Tambien mola mucha ir sin cuñas...
 ---
-
-estas son mis alpargatas bla blab 

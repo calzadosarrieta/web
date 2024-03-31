@@ -9648,7 +9648,7 @@ h6,
 .offer,
 .parallax,
 .footer {
-  background: linear-gradient(rgba(51, 33, 29, 0.7), rgba(51, 33, 29, 0.5)), url(../../img/bg.webp);
+  background: linear-gradient(rgba(51, 33, 29, 0.8), rgba(51, 33, 29, 0.5)), url(../../img/bg.webp);
   /*background-position: top;*/
   background-repeat: no-repeat;
   background-size: cover;
@@ -9743,6 +9743,8 @@ h6,
 .section-products .part-1-before {
 /*    background: url("https://i0.wp.com/www.calzadosarrieta.com/wp-content/uploads/2021/03/IMG_5445_modif-scaled.jpg?resize=823%2C1024&ssl=1") no-repeat center;*/
     background-size: cover;
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -9987,6 +9989,15 @@ form.success:after {
     font-size: small;
 }
 
+
+
+.fa-search {
+    float: right;
+    margin-right: 10px;
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
+}
 
 
 /* cyrillic-ext */

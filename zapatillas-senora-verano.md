@@ -1,8 +1,8 @@
 ---
-title: Zapatillas Señora Veranno
+title: Zapatillas Señora Verano
 layout: section
 categories:
-  - title: Titulo 1
+  - title: Veranito
     filter: zapatillas-senora-verano/
     description: 
 ---

@@ -73,7 +73,7 @@
                 <div class="col-lg-6 mb-5">
                     <div class="row align-items-center">
                         <div class="col-sm-5">
-                            <img loading="lazy" class="img-fluid mb-3 mb-sm-0" src="{{ value.image || absolute_uri }}" alt="{{ value.title }}">
+                            <img loading="lazy" class="img-fluid mb-3 mb-sm-0" src="{{ value.image | absolute_url }}" alt="{{ value.title }}">
                         </div>
                         <div class="col-sm-7">
                             <h4><i class="{{ value.icon }} service-icon"></i>{{ value.title }}</h4>
@@ -108,20 +108,22 @@
                 <h4 class="text-primary mt-4">{{ page.featured.title }}</h4>
             </div>
             <div class="row top6">
-                {% for product in site.static_files %}{% if product.path contains page.featured.filter %}
-                {% assign basename = product.basename | split: "|" %}
+                {% assign products = site.pages | sort: 'order' | reverse %}
+                {% for product in products %}{% if product.path contains page.featured.filter %}
                 <!-- Begin producto destacado -->
                 <div class="col-lg-6">
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img loading="lazy" class="w-100 rounded-circle mb-3 mb-sm-0" src=".{{ product.path | uri_escape }}" alt="{{ product.basename }}" style="object-fit: cover; aspect-ratio: 1;">
-                            <h5 class="menu-price">{{ basename | slice: 1 }}</h5>
+                    <a href="{{ product.url | absolute_url }}#top">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-4 col-sm-3">
+                                <img loading="lazy" class="w-100 rounded-circle mb-3 mb-sm-0" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}" style="object-fit: cover; aspect-ratio: 1;">
+                                <h5 class="menu-price">{{ product.price }}</h5>
+                            </div>
+                            <div class="col-8 col-sm-9">
+                                <h4>{{ product.title }}</h4>
+                                <p class="m-0">{{ product.description }}</p>
+                            </div>
                         </div>
-                        <div class="col-8 col-sm-9">
-                            <h4>{{ basename | slice: 0 }}</h4>
-                            <p class="m-0">{{ basename | slice: 3 }}</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <!-- End producto destacado -->
                 {% endif %}{% endfor %}                

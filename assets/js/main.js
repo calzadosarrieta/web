@@ -81,13 +81,19 @@ function original ($) {
 
     // Intercept all clicks on links so they don't trigger a page reload.
     // we can then use `history.pushState` so those link clicks still change the url appropriately.
-    document.addEventListener('click', (e) => {
+    window.addEventListener('click', (e) => {
         let href = e.target.href
         if (!href) return
         let url = new URL(href)
 
-        // If same origin, but different path, use SPA navigation    
-        if (url.origin === location.origin && url.pathname !== location.pathname ) {
+        // Open external (crossorigin) links on new page
+        if (url.origin !== location.origin) {
+            e.preventDefault()
+            return window.open(href, '_blank').focus();
+       }
+
+       // If same origin, but different path, use SPA navigation
+       if (url.pathname !== location.pathname ) {
             e.preventDefault()
             history.pushState(null, document.title, href)
             handleNavigation()
@@ -110,14 +116,16 @@ function original ($) {
             document.body.innerHTML = getElement(this.responseText, 'body');
             document.title = getElement(this.responseText, 'title') || document.title
             currentPath = location.pathname
+
             window.dispatchEvent(new Event("load"));
 
             // Handle hash
-            if (location.hash && document.getElementById( location.hash )) {
-                document.getElementById( location.hash ).scrollIntoView();
-            } else {
+            if (location.hash && document.querySelector( location.hash )) {
+                document.querySelector( location.hash ).scrollIntoView();
+            } else if (location.hash == '#top') {
                 window.scrollTo({ top: 0 });    
-            }   
+            }
+            
         };
         xhr.send();
     }
@@ -128,6 +136,9 @@ function original ($) {
 window.onload = function (){
     updateActiveLink()
     original(jQuery)
+
+    /*let search = window.location.hash.split('search-')[1]
+    if (search) { sortProducts( search.replace('-',''))}*/
 }
 
 
@@ -214,8 +225,34 @@ function previewImage(img) {
     });
 }
 
-/* SHARE */
 
-function showShare(elem) {
-    // body...
+
+/* SHARE */
+async function showShare() {
+    let e = event
+    try {
+      await navigator.share({
+          title: "MDN",
+          text: "Learn web development on MDN!",
+          url: "https://developer.mozilla.org",
+        });
+      } catch (err) {
+        console.log(e)
+
+        let modal = document.getElementById("smallModal")
+
+        modal.style.left = e.clientX+"px"
+        modal.style.top = e.clientY+"px"
+    
+    // Show the modal
+    modal.style.display = 'block';
+    
+    // Close the modal
+    modal.onclick = function() {
+      modal.style.display = "none";
+    }
+    document.body.addEventListener('keydown', function(e) {
+      if (e.key == "Escape") modal.style.display = "none";
+    });
+    }
 }
