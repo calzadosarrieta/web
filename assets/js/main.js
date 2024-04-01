@@ -158,13 +158,27 @@ function sendForm(selector){
         }
         message[key] = fields[i].value
     }
-    // Clear
-    for (var i = 0; i < fields.length; i++) { fields[i].value = '' }
-    let form = document.querySelector(selector)
-    form.classList.add('success')
-    form.dataset.success = 'Gracias por tu mensaje!'
+
+    var xhr= new XMLHttpRequest();
+    let url = `https://arrietaeguren.es/api/email?message=${JSON.stringify(message, null, 2)}&from=${message.email}&subject=${message.asunto}`
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState!==4 || this.status!==200){
+            form.classList.add('success')
+            form.dataset.success = 'Error... ' + this.responseText
+            return; // TODO: smarter error handling
+        }
+        // Clear
+        for (var i = 0; i < fields.length; i++) { fields[i].value = '' }
+        let form = document.querySelector(selector)
+        form.classList.add('success')
+        form.dataset.success = 'Gracias por tu mensajee!'
+    };
+    xhr.send();
     console.log(message)
 }
+
+
 
 
 // Update active link
