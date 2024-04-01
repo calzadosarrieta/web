@@ -50,13 +50,19 @@
   <div id="caption"></div>
 </div>
 
-<div id="smallModal" class="modal" style="height: 50px !important; background: yellow; display: none; position: fixed; z-index: 55;">
-  <span class="close">&times;</span>
-  <ul>
-  <li class="share"><a onclick="showShare(this)"><i class="fab fa-whatsapp"></i></a></li>
-<li class="share"><a onclick="showShare(this)"><i class="fas fa-envelope"></i></a></li>
-<li class="share"><a onclick="navigator.clipboard.writeText('...');"><i class="fa fa-clipboard"></i></a></li>
-</ul>
+
+<!--  Share on click -->
+<div class="modal">
+<div id="smallModal">
+    <ul>
+        <li><a onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a onclick="share('facebook')"><i class="fab fa-facebook"></i></a></li>
+        <li><a onclick="share('email')"><i class="fas fa-envelope"></i></a></li>
+        <li><a onclick="share('clipboard')"><i class="fa fa-clipboard"></i></a></li>
+        <li><a onclick="share('twitter')"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a onclick="share('linkedin')"><i class="fa-brands fa-linkedin-in"></i></a></li>
+    </ul>
+</div>
 </div>
 
 <!-- Back to Top -->

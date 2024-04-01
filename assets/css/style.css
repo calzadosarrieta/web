@@ -9673,7 +9673,7 @@ h6,
 
 /* https://codepen.io/HamzaGourram/pen/XWMEvgr */
 
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 .section-products {
     font-family: "Poppins", sans-serif;
@@ -9741,7 +9741,6 @@ h6,
 
 
 .section-products .part-1-before {
-/*    background: url("https://i0.wp.com/www.calzadosarrieta.com/wp-content/uploads/2021/03/IMG_5445_modif-scaled.jpg?resize=823%2C1024&ssl=1") no-repeat center;*/
     background-size: cover;
     object-fit: cover;
     object-position: center;
@@ -9830,8 +9829,7 @@ h6,
 }
 
 
-.product-old-price:empty,
-.menu-price:empty {
+.product-old-price:empty, .menu-price:empty {
   display: none !important;
 }
 
@@ -9938,6 +9936,50 @@ h6,
   animation-duration: 0.6s;
 }
 
+#smallModal {
+  /*display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+#smallModal ul {
+    position: absolute;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 1;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+
+#smallModal ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#smallModal ul li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ffffff;
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
+    transition: color 0.2s;
+}
+
+#smallModal ul li a:hover {
+    color: #fe302f;
+}
+
+
+
+
+
 @keyframes zoom {
   from {transform:scale(0)}
   to {transform:scale(1)}
@@ -9998,6 +10040,10 @@ form.success:after {
     position: relative;
     z-index: 2;
 }
+
+
+
+
 
 
 /* cyrillic-ext */

@@ -230,29 +230,60 @@ function previewImage(img) {
 /* SHARE */
 async function showShare() {
     let e = event
+    const { title, text, url, image } = getShareData( event.target )
     try {
       await navigator.share({
-          title: "MDN",
-          text: "Learn web development on MDN!",
-          url: "https://developer.mozilla.org",
+          title: title,
+          text: text,
+          url: url,
         });
       } catch (err) {
         console.log(e)
 
-        let modal = document.getElementById("smallModal")
+        let shareModal = document.getElementById("smallModal")
+        let modal = shareModal.parentNode
 
-        modal.style.left = e.clientX+"px"
-        modal.style.top = e.clientY+"px"
+        shareModal.style.left = e.clientX-100+"px"
+        shareModal.style.top = e.clientY-30+"px"
     
-    // Show the modal
-    modal.style.display = 'block';
-    
-    // Close the modal
-    modal.onclick = function() {
-      modal.style.display = "none";
+        // Show the modal
+        modal.style.display = 'block';
+        
+        // Close the modal
+        modal.onclick = function() {
+          modal.style.display = "none";
+        }
+        document.body.addEventListener('keydown', function(e) {
+          if (e.key == "Escape") modal.style.display = "none";
+        });
     }
-    document.body.addEventListener('keydown', function(e) {
-      if (e.key == "Escape") modal.style.display = "none";
-    });
+}
+
+function share(destination) {
+    const { title, text, url, image } = getShareData( event.target )
+    if (destination == "clipboard") {
+        return navigator.clipboard.writeText(url);
+    }
+    let links = {
+        whatsapp: `https://wa.me/?text=${text}`,
+        telegram: `https://t.me/share/url?url=${url}&text=${text}`,
+        tumblr: `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&caption=${text}`,
+        email: `mailto:?subject=${text}&body=${text}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+        //linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
+        pinterest: `https://pinterest.com/pin/create/button/?url=${url}&amp;media=${image}`,
+        twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=calzadosarrieta,zapatillas,alpargatas`,
+        reddit: `https://reddit.com/submit?url=<URL>&title=<TITLE>`
+    }
+    window.open(links[destination], '_blank').focus();
+}
+
+function getShareData( elem ){
+    return {
+        title: 'Calzados Arrieta',
+        text: 'test',
+        url:"https://calzadosarrieta.github.io/web/index.html",
+        image:''
     }
 }

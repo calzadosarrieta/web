@@ -1,6 +1,7 @@
 ---
 title: Alpargatas
 layout: section
+image: img/alpargatas.webp
 categories:
   - title: Cuñas
     filter: /alpargatas/

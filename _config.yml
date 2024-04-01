@@ -17,6 +17,7 @@ country: Spain
 latitude: 42.81222518996606
 longitude: -1.64002290369713
 icon: img/favicon.ico
+image: img/carousel-1.webp
 
 
 logo:
@@ -27,16 +28,12 @@ sameAs:
 webmaster_verifications:
   google: 1234
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: img/carousel-1.webp
-      keywords: calzados alpargatas zapatillas # ignored by Google
+
+keywords: calzados alpargatas zapatillas # ignored by Google
+
+      
 
 
-baseurl: "/web" # the subpath of your site, e.g. /blog
-url: "https://calzadosarrieta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 
@@ -44,9 +41,11 @@ url: "https://calzadosarrieta.github.io" # the base hostname & protocol for your
 
 
 # Build settings (NO TOCAR)
-theme: minima
+#theme: minima
 sass:
-#  style: compressed
+  style: compressed
   sass_dir: _sass
 plugins:
   - jekyll-seo-tag
+baseurl: "/web" # the subpath of your site, e.g. /blog
+url: "https://calzadosarrieta.github.io" # the base hostname & protocol for your site, e.g. http://example.com

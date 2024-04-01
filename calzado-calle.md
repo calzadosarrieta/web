@@ -1,6 +1,7 @@
 ---
 title: Calzado de calle
 layout: section
+image: img/calzado-calle.webp
 categories:
   - title: Cuñas
     filter: /calzado-calle/

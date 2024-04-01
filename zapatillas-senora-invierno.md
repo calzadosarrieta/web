@@ -1,6 +1,7 @@
 ---
 title: Zapatillas Señora Invierno
 layout: section
+image: img/zapatillas-senora-invierno.webp
 categories:
   - title: zapas de lana
     filter: zapatillas-senora-invierno/

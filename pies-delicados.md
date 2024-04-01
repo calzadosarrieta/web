@@ -1,6 +1,7 @@
 ---
 title: Pies delicados
 layout: section
+image: img/pies-delicados.webp
 categories:
   - title: Pies delicados
     filter: /pies-delicados/
