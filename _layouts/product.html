@@ -9,11 +9,12 @@
         <h1 class="display-4 mb-3 mt-0 mt-lg-3 text-white">{{ page.title }}</h1>
         <div class="d-inline-flex mb-2">
             <p class="m-0 text-white">{{ page.description }}</p>
-            <p class="m-0 text-white">{{ page.content }}</p>
         </div>
     </div>
 </div>
 <!-- Page Header End -->
+
+{{ page.content }}
 
 <section class="section-products">
  <!-- Contact Start -->
@@ -74,6 +75,7 @@
 
 
 {% include footer.html %}
+
 
 </body>
 

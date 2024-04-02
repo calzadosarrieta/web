@@ -76,26 +76,41 @@ function original ($) {
         return bodyMatch? bodyMatch[1] : false
     }
 
+    // Simple (buggy?) event delegation
+    function getLink(elem) {
+        if (elem.href){
+            return new URL(elem.href)
+        } else if ( !elem.matches('a *')) {
+            return false
+        } else {
+            for (var i = 0; i < 10; i++) {
+                elem = elem.parentNode
+                if( !elem ) return false
+                if( elem.href ) return new URL(elem.href)
+            }
+        }
+    }
+
     // Subscribe to "popstate" aka clicks to "back" or "forward" button on their browser
     window.addEventListener('popstate', handleNavigation)
 
     // Intercept all clicks on links so they don't trigger a page reload.
     // we can then use `history.pushState` so those link clicks still change the url appropriately.
     window.addEventListener('click', (e) => {
-        let href = e.target.href
-        if (!href) return
-        let url = new URL(href)
+        // Get desired url (if any)
+        let url = getLink(e.target)
+        if (!url) return
 
         // Open external (crossorigin) links on new page
         if (url.origin !== location.origin) {
             e.preventDefault()
-            return window.open(href, '_blank').focus();
+            return window.open(url.href, '_blank').focus();
        }
 
        // If same origin, but different path, use SPA navigation
        if (url.pathname !== location.pathname ) {
             e.preventDefault()
-            history.pushState(null, document.title, href)
+            history.pushState(null, document.title, url.href)
             handleNavigation()
         }
     })
@@ -106,26 +121,25 @@ function original ($) {
         if( currentPath == location.pathname ) return
         // Now route accordingly
         console.log('Routing SPA to:', location.pathname)
-        var xhr= new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.open('GET', location.pathname, true);
         xhr.onreadystatechange = function() {
-            if (this.readyState!==4 || this.status!==200){
-                return; // TODO: smarter error handling
-            }
+            // If something failed, fallback to good old page load
+            if (this.readyState !==4 ) return
+            if (this.status !==200 ) return location.reload()
+
             // Update path
             document.body.innerHTML = getElement(this.responseText, 'body');
             document.title = getElement(this.responseText, 'title') || document.title
             currentPath = location.pathname
 
+            // Dispatch 'onload' event
             window.dispatchEvent(new Event("load"));
 
             // Handle hash
             if (location.hash && document.querySelector( location.hash )) {
                 document.querySelector( location.hash ).scrollIntoView();
-            } else if (location.hash == '#top') {
-                window.scrollTo({ top: 0 });    
             }
-            
         };
         xhr.send();
     }
@@ -136,6 +150,10 @@ function original ($) {
 window.onload = function (){
     updateActiveLink()
     original(jQuery)
+
+    if (location.pathname.includes('/productos/')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     /*let search = window.location.hash.split('search-')[1]
     if (search) { sortProducts( search.replace('-',''))}*/
@@ -204,7 +222,7 @@ function cleanString(str){
 
 function sortProducts(query){
     let products = document.getElementsByClassName('single-product')
-    query = cleanString(query).split('|')
+    query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {
         let filter = cleanString(products[i].dataset.filter)
         let matches = query.filter((word) => filter.includes(word)).length;
