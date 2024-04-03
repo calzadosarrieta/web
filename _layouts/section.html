@@ -3,6 +3,8 @@
 <body>
 
 {% include header.html %}
+
+
 <!-- Page Header Start -->
 <div class="container-fluid page-header mb-0 position-relative overlay-bottom" style="background-image: linear-gradient(rgba(51, 33, 29, 0.8), rgba(51, 33, 29, 0.3)), url('{{ page.image | absolute_url | uri_escape }}');">
     <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 350px; text-align: center">
@@ -14,9 +16,11 @@
 </div>
 <!-- Page Header End -->
 
+
+<!-- Search Box Start -->
 <div id="searchBox" class="container row mt-1 align-items-center" style="margin: auto;">
     <div class="search contact-form col-md-6 mt-4">
-        <input onkeyup="sortProducts(this.value)" type="text" class="form-control p-4" name="query" placeholder="Encuentra tus zapatillas ideales"/>
+        <input onkeyup="sortProducts(this.value)" type="text" class="form-control p-4" name="query" placeholder="Encuentra tus zapatillas ideales" onfocus='goTo("{{ 'nuestros-productos.html#searchBox' | absolute_url }}")'/>
         <i class="fa fa-search"></i>
     </div>
     <div class="contact-form col-md-6 mt-4">
@@ -32,6 +36,8 @@
         </div>
     </div>
 </div>
+<!-- Search Box End -->
+
 
 <!--{{ page.content }}-->
 
@@ -55,7 +61,7 @@
             <!-- Start Single Product -->
             {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
             {% else %}<div class="col-md-6 col-lg-4 col-xl-3">{% endif %}
-                <div class="single-product" data-image="{{ product.image | absolute_url | uri_escape }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
+                <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
                     <a class="favourite-mark toogleFavorite"><i class="fas fa-heart"></i></a>
                     <div class="part-1">
                         {% if product.tags contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
@@ -76,8 +82,7 @@
                     </div>
                     <div class="part-2">
                         <h3 class="product-title">{{ product.title }}</h3>
-                        <h4 class="product-old-price">{{ basename | slice: 2 }}</h4>
-                        <h4 class="product-price">{{ product.price }}</h4>
+                        {% if product.price %}<h4 class="product-price">{{ product.price }}€</h4>{% endif %}
                     </div>
                 </div>
             </div>

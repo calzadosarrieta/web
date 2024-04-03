@@ -63,8 +63,6 @@ function original ($) {
 
 
 /*https://gist.github.com/JCPedroza/04d13c652c1c83e32097d9b5a1b58f30*/
-
-
 (function () {
     console.log('Activate Single Page Application!')
     let currentPath = location.pathname
@@ -139,12 +137,22 @@ function original ($) {
             // Handle hash
             if (location.hash && document.querySelector( location.hash )) {
                 document.querySelector( location.hash ).scrollIntoView();
+                document.querySelector( location.hash ).focus()
             }
         };
         xhr.send();
     }
     
 })();
+
+
+function goTo( url ){
+    url = new URL(url)
+    if( location.pathname != url.pathname){
+        history.pushState(null, document.title, url.href)
+        return dispatchEvent(new PopStateEvent('popstate'));
+    }
+}
 
 
 window.onload = function (){
@@ -243,7 +251,7 @@ function sortProducts(query){
     let products = document.getElementsByClassName('single-product')
     query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {
-        let filter = cleanString(products[i].dataset.description + products[i].classList.value)
+        let filter = cleanString(products[i].dataset.image + products[i].classList.value)
         let matches = query.filter((word) => filter.includes(word)).length;
         products[i].parentNode.style.order = - matches
         products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
@@ -302,14 +310,14 @@ function markFavourites(){
 
 
 /* SHARE */
-async function showShare( product ) {
-    try {
-      await navigator.share({
+function showShare( product ) {
+    if( navigator.canShare() ){
+        navigator.share({
           title: product.dataset.title,
           text: product.dataset.description,
           url: product.dataset.url,
         });
-      } catch (err) {
+     } else {
         product.classList.toggle('sharing')
     }
 }
@@ -318,7 +326,7 @@ function share(destination, product) {
     let title = encodeURIComponent(product.dataset.title)
     let text = encodeURIComponent(product.dataset.description)
     let url = encodeURIComponent(product.dataset.url)
-    let image = product.dataset.image // already encoded
+    let image = encodeURIComponent(product.dataset.image)
 
     let links = {
         whatsapp: `https://wa.me/?text=${text}`,
