@@ -335,8 +335,8 @@ function share(destination, product) {
 
     for (let key in links) {
         if (destination.includes(key)) {
-            console.log(destination, key, links[key])
-            //window.open(links[key], '_blank').focus();        
+            //console.log(destination, key, links[key])
+            window.open(links[key], '_blank').focus();        
         }
     }    
 }
