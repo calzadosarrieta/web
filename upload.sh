@@ -12,6 +12,7 @@ slugify() {
 
 # Function to create YAML file
 create_yaml() {
+    echo "$1"
     local filepath="$1"
     local fullname=$(basename "$filepath")
     local filename="${fullname%.*}"
