@@ -3,11 +3,13 @@ title: Alpargatas
 layout: section
 image: img/alpargatas.webp
 categories:
-  - title: Cuñas
+  - title: Alpargatas abierta
     filter: /alpargatas/
+    filter2: abiertas
     description: Cuñas suuuper molonas
 
-  - title: Alpargatas planas
-    filter: cuña
-    description: Tambien mola mucha ir sin cuñas...
+  - title: Alpargatas abierta con cuña
+    filter: /alpargatas/
+    filter2: cuña
+    description: Cuñas suuuper molonas
 ---

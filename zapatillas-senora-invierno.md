@@ -10,7 +10,7 @@ categories:
 
   - title: zapas de invierno de lana y sin talón
     filter: zapatillas-senora-invierno/
-    filter2: destalonada
+    filter2: delana
     filter3: lana
     description: 
 ---
