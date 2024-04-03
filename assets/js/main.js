@@ -155,6 +155,8 @@ window.onload = function (){
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    markFavourites()
+
     /*let search = window.location.hash.split('search-')[1]
     if (search) { sortProducts( search.replace('-',''))}*/
 }
@@ -212,6 +214,23 @@ function updateActiveLink() {
 }
 
 
+function handleProductClick( product ) {
+    let elem = event.target
+    if (elem.matches('.toogleFavorite, .toogleFavorite *')) {
+        toogleFavorite( product )
+    } else if ( elem.matches('.showShare *')){
+        showShare( product )
+    } else if ( elem.matches('.preview *')){
+        previewImage( product.getElementsByTagName('img')[0] )
+    } else if ( elem.matches('.clipboard *')){
+        navigator.clipboard.writeText(product.dataset.url)
+        product.classList.remove('sharing')
+    } else if ( elem.matches('.share *')) {
+        let i = elem.tagName == 'I'? elem : elem.getElementsByTagName('I')[0]
+        share( i.classList.value, product )
+    }
+}
+
 
 /* PRODUCT FILTER */
 function cleanString(str){
@@ -224,15 +243,13 @@ function sortProducts(query){
     let products = document.getElementsByClassName('single-product')
     query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {
-        let filter = cleanString(products[i].dataset.filter)
+        let filter = cleanString(products[i].dataset.description + products[i].classList.value)
         let matches = query.filter((word) => filter.includes(word)).length;
         products[i].parentNode.style.order = - matches
         products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
     }
-
     let box = document.getElementById('searchBox')
     if (box) box.scrollIntoView({ behavior: "smooth"});
-    
 }
 
 
@@ -259,48 +276,55 @@ function previewImage(img) {
 
 
 
-/* SHARE */
-async function showShare() {
-    let e = event
-    const { title, text, url, image } = getShareData( event.target )
-    try {
-      await navigator.share({
-          title: title,
-          text: text,
-          url: url,
-        });
-      } catch (err) {
-        console.log(e)
+/* FAVOURITES */
+function toogleFavorite( product ) {
+    let url = product.dataset.url
+    let favourites = localStorage.getItem("favourites") || '{}'
+    favourites = JSON.parse(favourites)
+    favourites[url] = !favourites[url]
+    localStorage.setItem('favourites',JSON.stringify(favourites))
+    markFavourites()
+}
 
-        let shareModal = document.getElementById("smallModal")
-        let modal = shareModal.parentNode
-
-        shareModal.style.left = e.clientX-100+"px"
-        shareModal.style.top = e.clientY-30+"px"
-    
-        // Show the modal
-        modal.style.display = 'block';
-        
-        // Close the modal
-        modal.onclick = function() {
-          modal.style.display = "none";
+function markFavourites(){
+    let favourites = localStorage.getItem("favourites") || '{}'
+    favourites = JSON.parse(favourites)
+    let products = document.getElementsByClassName('single-product')
+    for (var i = 0; i < products.length; i++) {
+        if (products[i].dataset.url && favourites[products[i].dataset.url] ) {
+            products[i].classList.add('favourite')
+        } else {
+            products[i].classList.remove('favourite')
         }
-        document.body.addEventListener('keydown', function(e) {
-          if (e.key == "Escape") modal.style.display = "none";
-        });
     }
 }
 
-function share(destination) {
-    const { title, text, url, image } = getShareData( event.target )
-    if (destination == "clipboard") {
-        return navigator.clipboard.writeText(url);
+
+
+/* SHARE */
+async function showShare( product ) {
+    try {
+      await navigator.share({
+          title: product.dataset.title,
+          text: product.dataset.description,
+          url: product.dataset.url,
+        });
+      } catch (err) {
+        product.classList.toggle('sharing')
     }
+}
+
+function share(destination, product) {
+    let title = encodeURIComponent(product.dataset.title)
+    let text = encodeURIComponent(product.dataset.description)
+    let url = encodeURIComponent(product.dataset.url)
+    let image = product.dataset.image // already encoded
+
     let links = {
         whatsapp: `https://wa.me/?text=${text}`,
         telegram: `https://t.me/share/url?url=${url}&text=${text}`,
         tumblr: `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&caption=${text}`,
-        email: `mailto:?subject=${text}&body=${text}`,
+        envelope: `mailto:?subject=${text}&body=${text}`,
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
         //linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
@@ -308,14 +332,11 @@ function share(destination) {
         twitter: `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=calzadosarrieta,zapatillas,alpargatas`,
         reddit: `https://reddit.com/submit?url=<URL>&title=<TITLE>`
     }
-    window.open(links[destination], '_blank').focus();
-}
 
-function getShareData( elem ){
-    return {
-        title: 'Calzados Arrieta',
-        text: 'test',
-        url:"https://calzadosarrieta.github.io/web/index.html",
-        image:''
-    }
+    for (let key in links) {
+        if (destination.includes(key)) {
+            console.log(destination, key, links[key])
+            //window.open(links[key], '_blank').focus();        
+        }
+    }    
 }
