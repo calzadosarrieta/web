@@ -9658,7 +9658,7 @@ h6,
 }
 
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 992px){
   .carousel-item .parallax {
     background-attachment: inherit;
   }
@@ -9737,11 +9737,6 @@ h6,
     background: no-repeat center;
     background-size: cover;
     transition: all 0.3s;
-}
-
-
-.section-products .part-1-before {
-    background-size: cover;
     object-fit: cover;
     object-position: center;
 }
@@ -9883,28 +9878,57 @@ div.single-product.sharing li { display: inline-block !important; }
 
 
 /* GRID LAYOUT */
+
+.grid .col-5 { grid-column-end: span 5; }
+.grid .col-7 { grid-column-end: span 7; }
+.grid .col-12 { grid-column-end: span 12; }
+
+
+@media (min-width: 576px){
+  .grid .col-sm-5 { grid-column-end: span 5; }
+  .grid .col-sm-7 { grid-column-end: span 7; }
+  .grid .col-sm-12 { grid-column-end: span 12; }
+
+  .grid .col-sm-2y { grid-row-end: span 2;  }
+
+  .grid .col-sm-first { order: -1; }
+}
+
+
+
 .grid {
+  grid-template-columns: repeat(12, 1fr) !important;
+  display: grid !important;
+  grid-auto-flow: dense !important;
+}
+
+.grid > div {
+  max-width: 100% !important;
+}
+
+
+.old-grid{
   grid-template-columns: 100%;
   display: grid !important;
   grid-auto-flow: dense !important;
 }
 
 @media (min-width: 768px){
-  .grid { grid-template-columns: 50% 50%; }
-  .grid .doble { grid-column-end: span 2; }
-  .grid .dobley { grid-row-end: span 2; }
-  /*.grid .dobley .part-1 { height: 678px !important; }*/
+  .old-grid{ grid-template-columns: 50% 50%; }
+  .old-grid.doble { grid-column-end: span 2; }
+  .old-grid.dobley { grid-row-end: span 2; }
+  /*.old-grid.dobley .part-1 { height: 678px !important; }*/
 }
 
 @media (min-width: 992px){
-  .grid { grid-template-columns: 33.3% 33.3% 33.3%; }
+  .old-grid{ grid-template-columns: 33.3% 33.3% 33.3%; }
 }
 
 @media (min-width: 1200px){
-  .grid { grid-template-columns: 25% 25% 25% 25%; }
+  .old-grid{ grid-template-columns: 25% 25% 25% 25%; }
 }
 
-.grid > div {
+.old-grid> div {
   max-width: 100% !important;
 }
 
@@ -10061,6 +10085,18 @@ form.success:after {
 }
 
 
+
+
+.cover {
+    background: no-repeat center;
+    background-size: cover;
+    object-fit: cover;
+    object-position: center;    
+}
+
+.square {
+  aspect-ratio: 1/1;
+}
 
 
 

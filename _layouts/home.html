@@ -71,12 +71,14 @@
             <div class="row">
                 {% for value in page.values %}
                 <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img loading="lazy" class="img-fluid mb-3 mb-sm-0" src="{{ value.image | absolute_url }}" alt="{{ value.title }}">
-                        </div>
-                        <div class="col-sm-7">
+                    <div class="row align-items-center grid">
+                        <div class="col-12 col-sm-7">
                             <h4><i class="{{ value.icon }} service-icon"></i>{{ value.title }}</h4>
+                        </div>
+                        <div class="col-5 px-0 px-sm-3 col-sm-2y col-sm-first">
+                            <img loading="lazy" class="w-100 cover square mb-3" src="{{ value.image | absolute_url }}" alt="{{ value.title }}">
+                        </div>
+                        <div class="col-7">
                             <p class="m-0">{{ value.description }}</p>
                         </div>
                     </div>
