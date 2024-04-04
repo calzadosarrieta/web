@@ -2,6 +2,7 @@
 title: Alpargatas
 layout: section
 image: img/alpargatas.webp
+description: 
 categories:
   - title: Alpargatas abierta
     filter: /alpargatas/

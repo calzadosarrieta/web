@@ -1,14 +1,14 @@
 ---
 title: Portada
 layout: home
-type: LocalBusiness
+
 featured:
   title: Alpargatas
   filter: alpargata
 
 
 especialidad:
-  - title: Zapatilla y Alpargata
+  - title: Tradición
     image: img/carousel-4.webp
     class: active
 
@@ -18,26 +18,29 @@ especialidad:
   - title: Atención al cliente
     image: img/carousel-1.webp
 
+  - title: Comodidad y confort
+    image: img/carousel-3.webp
+
 
 values:
-  - title: Calidad
+  - title: Calidad y precios competitivos
     description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-    image: img/familiar_cropped.webp
+    image: img/familiar_cropped1.webp
     icon: fa fa-award
 
-  - title: Precios competitivos
+  - title: Tus modelos favoritos, disponibles todo el año
     description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-    image: img/familiar_cropped.webp
+    image: img/familiar_cropped2.webp
     icon: fa fa-award 
 
   - title: Trato humano
     description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-    image: img/personalizada.webp
+    image: img/familiar_cropped3.webp
     icon: fa fa-award 
 
   - title: Tradición familiar
     description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
-    image: img/familiar_cropped.webp
+    image: img/familiar_cropped4.webp
     icon: fa fa-award
 
 reviews:
@@ -77,5 +80,3 @@ reviews:
     img: https://lh3.googleusercontent.com/a/ACg8ocLAcvVF4bxu41un2Z5cuaWlDXZURRn17tQp47-Kggsz=w60-h60-p-rp-mo-br100
 
 ---
-
-This is the content of my page

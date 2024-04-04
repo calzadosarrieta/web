@@ -251,7 +251,7 @@ function sortProducts(query){
     let products = document.getElementsByClassName('single-product')
     query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {
-        let filter = cleanString(products[i].dataset.image + products[i].classList.value)
+        let filter = cleanString( decodeURI(products[i].dataset.image) + products[i].classList.value)
         let matches = query.filter((word) => filter.includes(word)).length;
         products[i].parentNode.style.order = - matches
         products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
