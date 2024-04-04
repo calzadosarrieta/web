@@ -311,7 +311,7 @@ function markFavourites(){
 
 /* SHARE */
 function showShare( product ) {
-    if( navigator.canShare() ){
+    if(/iPhone|iPad|Android/i.test(navigator.userAgent)){
         navigator.share({
           title: product.dataset.title,
           text: product.dataset.description,
@@ -332,7 +332,7 @@ function share(destination, product) {
         whatsapp: `https://wa.me/?text=${text}`,
         telegram: `https://t.me/share/url?url=${url}&text=${text}`,
         tumblr: `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&caption=${text}`,
-        envelope: `mailto:?subject=${text}&body=${text}`,
+        envelope: `mailto:?subject=${title}&body=${url}`,
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
         //linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
