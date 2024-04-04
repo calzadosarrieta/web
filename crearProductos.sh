@@ -46,8 +46,7 @@ order: $order
 
 }
 
-
-rm -r "$destination"
+rm -r "$destination/*"
 # Find all files within the specified subfolder and create YAML files
 find "$origin" -type f -print0 | while IFS= read -r -d '' file; do
     create_yaml "$file"
