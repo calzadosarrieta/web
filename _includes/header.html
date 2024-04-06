@@ -1,7 +1,7 @@
 <!-- Navbar Start -->
 <div class="container-fluid p-0 nav-bar">
     <nav class="navbar navbar-expand-lg bg-none navbar-dark">
-        <a href="{{ 'index.html' | absolute_url }}" class="navbar-brand px-lg-4 m-0">
+        <a href="{{ '/' | absolute_url }}" class="navbar-brand px-lg-4 m-0">
             <h1 class="m-0 display-7 text-white">Calzados Arrieta</h1>
         </a>
         <!--<span class="text-white">{{ site.phone }}</span>-->
@@ -10,10 +10,10 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto p-4">
-                <a href="{{ 'index.html' | absolute_url }}" class="nav-item nav-link">Portada</a>
+                <a href="{{ '/' | absolute_url }}" class="nav-item nav-link">Portada</a>
                 <a href="{{ 'alpargatas.html' | absolute_url }}" class="nav-item nav-link">Alpargatas</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Zapatillas</a>
+                    <span class="nav-link dropdown-toggle" style="cursor: pointer;" data-toggle="dropdown">Zapatillas</span>
                     <div class="dropdown-menu text-capitalize">
                         <a href="{{ 'zapatillas-senora-verano.html' | absolute_url }}" class="dropdown-item">Señora Verano</a>
                         <a href="{{ 'zapatillas-senora-invierno.html' | absolute_url }}" class="dropdown-item">Señora Invierno</a>

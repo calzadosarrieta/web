@@ -111,7 +111,7 @@
             </div>
             <div class="row top6">
                 {% assign products = site.pages | sort: 'order' | reverse %}
-                {% for product in products %}{% if product.path contains page.featured.filter %}
+                {% for product in products %}{% if product.image contains page.featured.filter %}
                 <!-- Begin producto destacado -->
                 <div class="col-lg-6">
                     <a href="{{ product.url | absolute_url }}">

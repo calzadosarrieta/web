@@ -56,6 +56,31 @@ function original ($) {
             }
         }
     });
+
+
+    // Testimonials carousel
+    $(".similar-product-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        margin: 40,
+        dots: true,
+        loop: true,
+        center: true,
+        responsive: {
+            0:{
+                items:2
+            },
+            576:{
+                items:3
+            },
+            768:{
+                items:6
+            },
+            992:{
+                items:6
+            }
+        }
+    });
     
 }
 
@@ -211,9 +236,10 @@ function sendForm(selector){
 
 // Update active link
 function updateActiveLink() {
-    let links = document.querySelectorAll('a')
+    let links = document.querySelectorAll('a[href]')
     for (var i = 0; i < links.length; i++) {
-        if( window.location.href.includes(links[i].href) ){
+        let linkPath = links[i].href? new URL(links[i].href).pathname : null
+        if( linkPath === location.pathname ){
             links[i].classList.add('active')
         } else {
             links[i].classList.remove('active')

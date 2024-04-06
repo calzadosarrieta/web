@@ -25,6 +25,11 @@ sameAs:
   facebook: https://www.facebook.com/p/Calzados-Arrieta-100063896959347
   google_maps: https://maps.app.goo.gl/1w5eFcZWMwopUFA16
 
+
+analytics:
+  #google: GOOGLE_ANALYTICS_ID
+  #mode: privacy # privacy | consent | off
+
 webmaster_verifications:
   google: 1234
 
