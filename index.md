@@ -3,7 +3,7 @@ title: Portada
 layout: home
 
 featured:
-  title: Alpargatas
+  title: No te pierdas
   filter: alpargata
 
 
