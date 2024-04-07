@@ -39,8 +39,6 @@
 <!-- Search Box End -->
 
 
-<!--{{ page.content }}-->
-
 {% for category in page.categories %}
 <section class="section-products pt-4">
     <div class="container">
@@ -91,6 +89,15 @@
     </div>
 </section>
 {% endfor %}
+
+
+
+{% if page.name == '404.md' %}
+
+{{ page.content }}
+
+{% endif %}
+
 
 {% include footer.html %}
 

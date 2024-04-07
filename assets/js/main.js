@@ -273,14 +273,14 @@ function cleanString(str){
     return str.toLowerCase().replace(/[áéíóúñs\b]/g,v=>accents[v])
 }
 
-function sortProducts(query){
+function sortProducts(query, maxDiff = 0 ){
     let products = document.getElementsByClassName('single-product')
     query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {
         let filter = cleanString( decodeURI(products[i].dataset.image) + products[i].classList.value)
         let matches = query.filter((word) => filter.includes(word)).length;
         products[i].parentNode.style.order = - matches
-        products[i].parentNode.style.display = matches < query.length? 'none' : 'block'
+        products[i].parentNode.style.display = matches  + maxDiff < query.length? 'none' : 'block'
     }
     let box = document.getElementById('searchBox')
     if (box) box.scrollIntoView({ behavior: "smooth"});
