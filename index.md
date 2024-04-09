@@ -23,23 +23,23 @@ especialidad:
 
 
 values:
-  - title: Calidad y precios competitivos
-    description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
+  - title: Calidad a precios competitivos
+    description: Materiales de primera calidad, fabricantes de excelencia, personal con experiencia y los mejores métodos de fabricación, a tu disposición por un precio justo y asequible
     image: img/familiar_cropped1.webp
     icon: fa fa-award
 
-  - title: Tus modelos favoritos, disponibles todo el año
-    description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
+  - title: Disponibilidad fuera de temporada
+    description: Ahora puedes encontrar tus modelos favoritos, los que mejor te encajan, durante todo el año. ¡Ven a consultarnos!
     image: img/familiar_cropped2.webp
     icon: fa fa-award 
 
-  - title: Trato humano
-    description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
+  - title: El trato humano, una tradición familiar
+    description: Desde hace más de 50 años, distintas generaciones de nuestra familia han trabajado por ofrecerte atención, calidez y una sonrisa
     image: img/familiar_cropped3.webp
     icon: fa fa-award 
 
-  - title: Tradición familiar
-    description: Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor
+  - title: Vanguardia y tradición, un encuentro posible
+    description: Productos tradicionales, de fabricación nacional y trayectoria consolidada con los últimos avances para conseguir salud, comfort y bienestar
     image: img/familiar_cropped4.webp
     icon: fa fa-award
 
