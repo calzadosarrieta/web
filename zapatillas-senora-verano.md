@@ -3,7 +3,7 @@ title: Zapatillas Señora Verano
 layout: section
 image: img/zapatillas-senora-verano.webp
 categories:
-  - title: Veranito
+  - title: Verano
     filter: zapatillas-senora-verano/
     description: 
 ---

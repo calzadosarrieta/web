@@ -3,7 +3,7 @@ title: Calzado de calle
 layout: section
 image: img/calzado-calle.webp
 categories:
-  - title: Cuñas
+  - title: Chanclas
     filter: /calzado-calle/
     description: Cuñas suuuper molonas
 ---
