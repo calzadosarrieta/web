@@ -3,7 +3,7 @@ title: Zapatillas Caballero
 layout: section
 image: img/zapatillas-caballero.webp
 categories:
-  - title: Titulo 1
+  - title: Zapatillas de casa de caballero
     filter: zapatillas-caballero/
     description: 
 
