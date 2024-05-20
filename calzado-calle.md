@@ -6,6 +6,7 @@ categories:
   - title: Calzado deportivo y de montaña
     filter: /calzado-calle/
     filter2: deportiva
+    filter3: montaña
     description: Zapatillas deportivas, de trekking y botas de monte
 
   - title: Zapatillas de lona y gimnasia
