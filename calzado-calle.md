@@ -6,7 +6,7 @@ categories:
   - title: Calzado deportivo y de montaña
     filter: /calzado-calle/
     filter2: deportiva
-    filter3: montaña
+    filter3: monte
     description: Zapatillas deportivas, de trekking y botas de monte
 
   - title: Zapatillas de lona y gimnasia
@@ -15,12 +15,13 @@ categories:
     description: 
 
   - title: Chancletas
-    filter: 
+    filter: /calzado-calle/
     filter2: chancleta
     description: Chancletas y calzado para el agua, la playa y la piscina
 
   - title: Abarcas
-    filter: abarca
+    filter: /calzado-calle/
+    filter2: abarca
     description: Abarcas de goma para recibir a Olentzero
 
   - title: Zapato
