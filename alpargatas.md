@@ -7,7 +7,7 @@ categories:
   - title: Alpargatas con cuña alta
     filter: /alpargatas/
     filter2: cuña alta
-    description: alpargatas con cuña de 5 o 7 cuerdas, equivalencia a 7 y 9 centímetros respectivamente.
+    description: Alpargatas con cuña de 5 o 7 cuerdas, equivalencia a 7 y 9 centímetros respectivamente.
 
   - title: Alpargatas con cuña media
     filter: /alpargatas/
