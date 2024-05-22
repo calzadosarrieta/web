@@ -16,17 +16,17 @@ categories:
 
   - title: Chancletas
     filter: /calzado-calle/
-    filter2: chancleta
+    filter2: Chancleta
     description: Chancletas y calzado para el agua, la playa y la piscina
 
   - title: Abarcas
     filter: /calzado-calle/
-    filter2: abarca
+    filter2: Abarca
     description: Abarcas de goma para recibir a Olentzero
 
   - title: Zapato
     filter: /calzado-calle/
-    filter2: zapato
+    filter2: Zapato
     description: Aquí te presentamos una pequeña selección de zapatos con los que ir siempre cómodo
 ---
 
