@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Alpargata de ante cuña media sujeta con hebilla corte cruzado 
-image: img/productos/alpargatas/Alpargata de ante cuña media sujeta con hebilla corte cruzado =59 =doble=verde kaki azul marino beige camel gaimo.webp
+image: img/productos/alpargatas/Alpargata de ante cuña media sujeta con hebilla corte cruzado =59 =doble destacado 1=verde kaki azul marino beige camel gaimo.webp
 price: 59 
-tags: doble
+tags: doble destacado 1
 description: verde kaki azul marino beige camel gaimo
-order: 0
+order: 1
 ---

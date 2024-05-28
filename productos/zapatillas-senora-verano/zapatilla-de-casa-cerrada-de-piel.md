@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Zapatilla de casa cerrada de piel 
-image: img/productos/zapatillas-senora-verano/Zapatilla de casa cerrada de piel =49 =azul =marrón.webp
-price: 49 
+image: img/productos/zapatillas-senora-verano/Zapatilla de casa cerrada de piel =48 =azul =negro =burdeos - copia.webp
+price: 48 
 tags: azul 
-description: marrón
+description: negro 
 order: 0
 ---
