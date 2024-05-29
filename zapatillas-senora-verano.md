@@ -3,6 +3,13 @@ title: Zapatillas Señora Verano
 layout: section
 image: img/zapatillas-senora-verano.webp
 categories:
+ 
+  - title: Zapatillas de piel
+    filter: /zapatillas-senora-verano/
+    filter2: piel
+    description:
+
+
   - title: Zapatillas destalonadas
     filter: /zapatillas-senora-verano/
     filter2: destalonada
