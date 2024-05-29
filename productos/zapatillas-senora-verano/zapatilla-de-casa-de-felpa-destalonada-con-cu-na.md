@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Zapatilla de casa de felpa destalonada con cuña
-image: img/productos/zapatillas-senora-verano/Zapatilla de casa de felpa destalonada con cuña=30.webp
+image: img/productos/zapatillas-senora-verano/Zapatilla de casa de felpa destalonada con cuña=30=destacado 2.webp
 price: 30
-tags: 
+tags: destacado 2
 description: 
-order: 0
+order: 1
 ---
