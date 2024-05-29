@@ -6,13 +6,12 @@ categories:
   - title: Calzado deportivo y de montaña
     filter: /calzado-calle/
     filter2: deportiva
-    filter2: monte
     description: Zapatillas deportivas, de trekking y botas de monte
 
-  - title: Zapatillas de lona y gimnasia
+  - title: Clásicos de calle
     filter: /calzado-calle/
-    filter2: lona 
-    description: 
+    filter2: clásicos
+    description: Las llames como las llames, aquí encontrarás los clásicos del verano para salir a la calle. 
 
   - title: Chancletas
     filter: /calzado-calle/

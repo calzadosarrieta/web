@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Chancleta de caballero de meter el dedo 
-image: img/productos/calzado-calle/Chancleta de caballero de meter el dedo =18.webp
+image: img/productos/calzado-calle/Chancleta de caballero de meter el dedo =18=joma.webp
 price: 18
-tags: 
+tags: joma
 description: 
 order: 0
 ---

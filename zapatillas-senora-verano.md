@@ -14,7 +14,7 @@ categories:
     description: Zapatillas de verano cerradas
 
 
-  - title: Zapatillas abiertas (con los dedos al aire)
+  - title: Zapatillas abiertas (dedos al aire)
     filter: /zapatillas-senora-verano/
     filter2: abierta
     description: Aquí tienes nuestras zapatillas de verano abiertas, que dejarán tus deditos al aire
