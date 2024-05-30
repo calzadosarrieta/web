@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Chancleta de caballero de velcro 
-image: img/productos/calzado-calle/Chancleta de caballero de velcro =33.webp
+image: img/productos/calzado-calle/Chancleta de caballero de velcro =33=joma.webp
 price: 33
-tags: 
+tags: joma
 description: 
 order: 0
 ---
