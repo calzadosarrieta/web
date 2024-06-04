@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Alpargata de piel plana sujeta con tira al talón
-image: img/productos/alpargatas/Alpargata de piel plana sujeta con tira al talón=35=gaimo rojo blanco.webp
-price: 35
-tags: gaimo rojo blanco
+image: img/productos/alpargatas/Alpargata de piel plana sujeta con tira al talón=48 =blanco salvi.webp
+price: 48 
+tags: blanco salvi
 description: 
 order: 0
 ---
