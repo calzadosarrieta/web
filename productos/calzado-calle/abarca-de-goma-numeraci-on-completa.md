@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Abarca de goma. Numeración completa
-image: img/productos/calzado-calle/Abarca de goma. Numeración completa=Precio según talla 25-30.webp
+image: img/productos/calzado-calle/Abarca de goma. Numeración completa=Precio según talla 25-30=doble.webp
 price: Precio según talla 25-30
-tags: 
+tags: doble
 description: 
 order: 0
 ---

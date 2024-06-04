@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Zapato caballero de cordón impermeable 
-image: img/productos/calzado-calle/Zapato caballero de cordón impermeable =75=negro notton.webp
+image: img/productos/calzado-calle/Zapato caballero de cordón impermeable =75=doble=negro notton.webp
 price: 75
-tags: negro notton
-description: 
+tags: doble
+description: negro notton
 order: 0
 ---

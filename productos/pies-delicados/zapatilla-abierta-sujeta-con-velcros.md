@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Zapatilla abierta sujeta con velcros
-image: img/productos/pies-delicados/Zapatilla abierta sujeta con velcros=27=azul marino beige pies delicados.webp
+image: img/productos/pies-delicados/Zapatilla abierta sujeta con velcros=27=azul marino beige cutillas.webp
 price: 27
-tags: azul marino beige pies delicados
+tags: azul marino beige cutillas
 description: 
 order: 0
 ---
