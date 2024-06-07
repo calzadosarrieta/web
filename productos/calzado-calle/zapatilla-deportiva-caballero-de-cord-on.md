@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Zapatilla deportiva caballero de cordón
-image: img/productos/calzado-calle/Zapatilla deportiva caballero de cordón=45=destacado2=azul marino verano joma números grandes.webp
-price: 45
-tags: destacado2
-description: azul marino verano joma números grandes
-order: 1
+image: img/productos/calzado-calle/Zapatilla deportiva caballero de cordón=46=blanco joma.webp
+price: 46
+tags: blanco joma
+description: 
+order: 0
 ---
