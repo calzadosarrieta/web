@@ -1,0 +1,150 @@
+<!-- INSPIRED BY:
+https://medium.com/codex/improving-my-html-video-facades-264216223a63 
+https://codepen.io/jason-knight/pen/OJBjgNQ -->
+
+<template>
+{%- assign params = include.params -%}
+{%- assign ratio = params.ratio | default: '16/9' -%}
+{% if params.yt %}
+<div class="facade youtube" style="--aspect-ratio:{{ ratio }}; --video-poster:url(https://img.youtube.com/vi/{{ params.yt }}/hqdefault.jpg)">
+  <header>{{ params.title }}</header>
+  <a href="https://www.youtube.com/watch?v={{ params.yt }}" target="_blank">
+    <span>Ver en YouTube</span>
+  </a>
+  <button type="button" onclick="addIframe('youtube','{{ params.yt }}')">{{ params.title }}</button>
+</div>
+{% elsif params.vimeo %}
+<div class="facade vimeo" style="--aspect-ratio:{{ ratio }}; --video-poster:url(https://i.vimeocdn.com/video/{{ params.vimeoPoster }})" >
+  <header>{{ params.title }}</header>
+  <a href="https://vimeo.com/{{ params.vimeo }}" target="_blank">
+    <span>Ver en Vimeo</span>
+  </a>
+  <button type="button" onclick="addIframe('vimeo', '{{ params.vimeo }}')">{{ params.title }}</button>
+</div>
+{% endif %}
+</template>
+
+
+
+<script>
+
+function make (parent, tagName, ...attr) {
+  return parent.appendChild(
+    Object.assign(
+      document.createElement(tagName),
+      ...attr
+    )
+  );
+}
+
+function addIframe (source, id ) {
+	let props = { allowfullscreen: true, allowtransparency: true, frameborder: "0" }
+	if (source == 'vimeo') {
+		props.allow = "autoplay; fullscreen; picture-in-picture"
+		props.src = `https://player.vimeo.com/video/${id}?autoplay=1`
+	} else if (source == 'youtube') {
+		props.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		props.src = `https://www.youtube.com/embed/${id}?autoplay=1`
+	} else {
+		return console.error('[addIframe] Invalid source', source)
+	}
+    const iframe = make(event.currentTarget.parentNode, "iframe", props  );
+    while (iframe.previousSibling) iframe.previousSibling.remove();
+ }
+
+</script>
+
+
+
+<style>
+
+.facade {
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:var(--aspect-ratio);
+  margin:1rem auto;
+  background-color:#000;
+  background-image:var(--video-poster);
+  background-size:cover;
+  background-position: center;
+}
+
+.facade > * {
+  box-sizing:border-box;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.facade a span {
+  position:absolute;
+  left:0;
+  bottom:1rem;
+  z-index:99;
+  padding:1rem;
+  line-height:1.5rem;
+  text-decoration:none;
+  background:#222;
+  color:#EEE;
+  transition:background 0.3s;
+}
+
+.facade a:focus span,
+.facade a:hover span {
+  background:#444;
+}
+
+.facade a b,
+.facade button {
+  background-color:transparent;
+  color:transparent;
+  cursor:pointer;
+}
+
+.facade button {
+  background:center no-repeat;
+  transition:scale 0.3s;
+}
+
+.facade button:focus,
+.facade button:hover {
+  scale:1.1;
+}
+
+.facade header {
+  padding:0.5rem;
+  color:#FFF;
+  text-shadow: 0 0 2px rgba(0,0,0,.5);
+}
+
+.facade a b {
+  display:inline-block;
+  font-size:1.25em;
+  vertical-align:top;
+  background:center no-repeat;
+  background-size:contain;
+}
+
+.facade.vimeo span {
+  background:#025;
+}
+
+.facade.vimeo a:focus span,
+.facade.vimeo a:hover span {
+  background:#008;
+}
+
+.facade.vimeo button {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%230BF' %3E%3Cpath d='M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z'/%3E%3C/svg%3E");
+  background-size:5rem;
+}
+
+.facade.youtube button {
+  background-image:url("data:image/svg+xml,%3Csvg width='159' height='110' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m154 17.5c-1.82-6.73-7.07-12-13.8-13.8-9.04-3.49-96.6-5.2-122 0.1-6.73 1.82-12 7.07-13.8 13.8-4.08 17.9-4.39 56.6 0.1 74.9 1.82 6.73 7.07 12 13.8 13.8 17.9 4.12 103 4.7 122 0 6.73-1.82 12-7.07 13.8-13.8 4.35-19.5 4.66-55.8-0.1-75z' fill='%23f00'/%3E%3Cpath d='m105 55-40.8-23.4v46.8z' fill='%23fff'/%3E%3C/svg%3E%0A");
+  background-size:5.81rem 4rem;
+}
+
+</style>

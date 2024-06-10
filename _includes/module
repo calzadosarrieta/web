@@ -1,0 +1,8 @@
+{%- assign modules = include.name | split: ',' | default: site.modules | default: 'test' -%}
+{%- assign open  = include.tag | default: 'template' | prepend: '<'  | append: '>' -%}
+{%- assign close = include.tag | default: 'template' | prepend: '</' | append: '>' -%}
+{%- for module in modules -%}
+{%- capture a -%}{%- include {{ module }}.html params=include -%}{%- endcapture -%}
+{%- capture b -%}{{ a | split: close | slice: 0 }}{%- endcapture -%}
+{{ b | split: open | slice: 1 | default: '' }}
+{%- endfor -%}

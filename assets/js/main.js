@@ -1,3 +1,6 @@
+---
+---
+
 function original ($) {
     "use strict";
     
@@ -374,3 +377,7 @@ function share(destination, product) {
         }
     }    
 }
+
+
+/* MODULES */
+{% include module tag='script' %}
