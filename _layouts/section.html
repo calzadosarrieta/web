@@ -52,9 +52,12 @@
         </div>
         <div class="row old-grid">
             {% assign products = site.pages | sort: 'order' | reverse %}
+
             {% assign filter2 = category.filter2 | default: 'productos/' %}
+            {% assign filter2OR = category.filter2OR | default: filter2 %}
+            {% assign filter2NOT = category.filter2NOT | default: 'asdfasdfkadflñasdfa' %}
             {% assign filter3 = category.filter3 | default: 'productos/' %}
-            {% for product in products %}{% if product.image contains category.filter and product.image contains filter2 and product.image contains filter3 %}
+            {% for product in products %}{% if product.image contains category.filter and (product.image contains filter2 or product.image contains filter2OR ) and not (product.image contains filter2NOT ) and product.image contains filter3 %}
 
             <!-- Start Single Product -->
             {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
@@ -75,7 +78,7 @@
                             <li class="clipboard"><a><i class="fa fa-clipboard"></i></a></li>
                             <li class="share"><a><i class="fa-brands fa-x-twitter"></i></a></li>
                         </ul>
-                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}">
+                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} | {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}">
                     </div>
                     <div class="part-2">
                         <h3 class="product-title">{{ product.title }}</h3>

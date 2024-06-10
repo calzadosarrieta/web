@@ -1,0 +1,9 @@
+---
+layout: product
+title: Alpargata de piel cuña alta (7 cm) color plata sujeta con tira al talón 
+image: img/productos/alpargata/Alpargata de piel cuña alta (7 cm) color plata sujeta con tira al talón =53 = plata metalizada salvi.webp
+price: 53 
+tags:  plata metalizada salvi
+description: 
+order: 0
+---

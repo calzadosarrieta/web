@@ -1,9 +1,0 @@
----
-layout: product
-title: Zapatilla de casa de felpa destalonada 
-image: img/productos/zapatillas-caballero/Zapatilla de casa de felpa destalonada =26 =gris azul marino vulladi verano.webp
-price: 26 
-tags: gris azul marino vulladi verano
-description: 
-order: 0
----

@@ -24,8 +24,10 @@ categories:
     description: Abarcas de goma para recibir a Olentzero
 
   - title: Zapato
-    filter: /calzado-calle/
-    filter2: Zapato
+    filter-folder: /productos/
+    filter-name: rojo
+    filter-name-or: blanco
+    filter-name-not: vulladi
     description: Aquí te presentamos una pequeña selección de zapatos con los que ir siempre cómodo
 ---
 

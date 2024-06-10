@@ -297,7 +297,7 @@ function previewImage(img) {
     // Show the modal
     document.getElementById("img01").src = img.src;
     modal.style.display = 'block';
-    document.getElementById("caption").innerText = img.alt
+    document.getElementById("caption").innerText = (img.alt || '').split('|')[0]
     
     // Close the modal
     modal.onclick = function() {

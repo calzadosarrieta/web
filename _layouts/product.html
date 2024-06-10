@@ -23,7 +23,7 @@
             </div>
             <div class="row py-4">
                 <div class="col-md-6 pb-3">
-                     <img alt="{{ page.title }} {{ page.price }} {{ page.description }}" src="{{ page.image | absolute_url | uri_escape }}" style="object-fit: cover; object-position: center; width: 100%; height: 500px; border:0;" onclick="previewImage(this)">
+                     <img alt="{{ page.title }} | {{ page.price }} {{ page.description }}" src="{{ page.image | absolute_url | uri_escape }}" style="object-fit: cover; object-position: center; width: 100%; height: 500px; border:0;" onclick="previewImage(this)">
                      {% if page.price %}<h5 class="menu-price mt-3 mr-3">{{ page.price }}€</h5>{% endif %}
                 </div>
                 <div class="col-md-6 py-4">

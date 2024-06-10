@@ -9,7 +9,6 @@ categories:
     filter2: piel
     description:
 
-
   - title: Zapatillas destalonadas
     filter: /zapatillas-senora-verano/
     filter2: destalonada

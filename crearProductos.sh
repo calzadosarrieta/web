@@ -14,7 +14,7 @@ slugify() {
 
 # Function to create YAML file
 create_yaml() {
-    echo "$1"
+    #echo "$1"
     local filepath="$1"
     local fullname=$(basename "$filepath")
     local filename="${fullname%.*}"
@@ -32,6 +32,12 @@ create_yaml() {
     elif [[ $fullname =~ "destacado-2" ]]; then order="2";
     elif [[ $fullname =~ "destacado" ]]; then order="1";
     else order="0"; fi;
+
+    if [ -e "$dir/$slug.md" ]; then
+        echo "=========== NOMBRE DUPLICADO ========!"
+        echo "==> $dir/$slug.md"
+        echo "=========== NOMBRE DUPLICADO ========!"
+    fi
 
     # Create YAML content
     echo "---
@@ -52,3 +58,5 @@ rm -rf productos/*
 find "$origin" -type f -print0 | while IFS= read -r -d '' file; do
    create_yaml "$file"
 done
+
+read -p "Press enter to continue"
