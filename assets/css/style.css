@@ -9614,6 +9614,14 @@ h6,
   background: #DA9F5B;
 }
 
+.owl-item .menu-price {
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
 .testimonial-carousel .owl-dots, .similar-product-carousel .owl-dots {
   margin-top: 30px;
   text-align: center;
@@ -9745,6 +9753,7 @@ h6,
 }
 
 
+.section-products .single-product .part-1 .price,
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
     position: absolute;
@@ -9760,6 +9769,11 @@ h6,
 .section-products .single-product .part-1 .new {
     left: 0;
     background-color: #444444;
+}
+
+.section-products .single-product .part-1 .price {
+    color: black;
+    background-color: white;
 }
 
 .section-products .single-product .part-1 ul {

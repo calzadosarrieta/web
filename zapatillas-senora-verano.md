@@ -5,25 +5,29 @@ image: img/zapatillas-senora-verano.webp
 categories:
  
   - title: Zapatillas de piel
-    filter: /zapatillas-senora-verano/
-    filter2: piel
+    filter-folder: /zapatilla señora verano/
+    filter-name: piel
     description:
 
   - title: Zapatillas destalonadas
-    filter: /zapatillas-senora-verano/
-    filter2: destalonada
+    filter-folder: /zapatilla señora verano/
+    filter-name: destalonada
+    filter-name-not: pielas
     description: Zapatillas de señora pensadas para el verano, cerradas por los dedos y sin talón
 
   - title: Zapatillas cerradas
-    filter: /zapatillas-senora-verano/
-    filter2: cerrada
+    filter-folder: /zapatilla señora verano/
+    filter-name: cerrada
     description: Zapatillas de verano cerradas
 
-
   - title: Zapatillas abiertas (dedos al aire)
-    filter: /zapatillas-senora-verano/
-    filter2: abierta
+    filter-folder: /zapatilla señora verano/
+    filter-name: abierta
     description: Aquí tienes nuestras zapatillas de verano abiertas, que dejarán tus deditos al aire
+
+  - title: Más zapatillas de señora para verano
+    filter-folder: /zapatilla señora verano/
+    filter-no-repeat: true
 ---
 
 This is the content of my page

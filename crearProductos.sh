@@ -7,7 +7,7 @@ destination="productos"
 
 # https://gist.github.com/oneohthree/f528c7ae1e701ad990e6
 slugify() {
-    slug=$(echo "$1" | xargs -0 printf '%b\n' | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
+    slug=$(echo "$1" | xargs -0 printf '%b\n' | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]\/]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
     echo "$slug"
 }
 
@@ -19,7 +19,7 @@ create_yaml() {
     local fullname=$(basename "$filepath")
     local filename="${fullname%.*}"
     local dir="$(dirname "$filepath")"
-    dir="${dir/$origin/$destination}"
+    dir=$(slugify "${dir/$origin/$destination}")
 
     # Split filename into an array using the separator |
     IFS="=" read -r -a filename_parts <<< "$filename"
@@ -33,10 +33,14 @@ create_yaml() {
     elif [[ $fullname =~ "destacado" ]]; then order="1";
     else order="0"; fi;
 
+    # Append number to duplicated files
     if [ -e "$dir/$slug.md" ]; then
-        echo "=========== NOMBRE DUPLICADO ========!"
-        echo "==> $dir/$slug.md"
-        echo "=========== NOMBRE DUPLICADO ========!"
+        for i in 2 3 4 5 6 7 8 9; do
+            if [ ! -e "$dir/$slug-$i.md" ]; then
+                slug="${slug}-${i}"
+                break
+            fi
+        done
     fi
 
     # Create YAML content

@@ -5,29 +5,23 @@ image: img/zapatillas-senora-invierno.webp
 categories:
 
   - title: Zapatillas de casa de piel
-    filter: zapatillas-senora-invierno/
-    filter2: piel
+    filter-folder: /zapatilla señora invierno/
+    filter-name: piel
     description:
 
-
   - title: Zapatillas de casa de invierno destalonada
-    filter: zapatillas-senora-invierno/
-    filter2: destalonada
-    filter3: 
+    filter-folder: /zapatilla señora invierno/
+    filter-name: destalonada
     description: Zapatillas sin talón, cómodas y calentitas para estar en casa 
 
   - title: Zapatillas de casa cerradas para invierno
-    filter: zapatillas-senora-invierno/
-    filter2: cerrada
+    filter-folder: /zapatilla señora invierno/
+    filter-name: cerrada
     description: Nuestras zapatillas más sujetas y abrigadas
 
-
-
-  - title: 
-    filter: 
-    filter2: 
-    filter3: 
-    description: 
+  - title: Más zapatillas de señora para invierno
+    filter-folder: /zapatilla señora invierno/
+    filter-no-repeat: true
 ---
 
 This is the content of my page

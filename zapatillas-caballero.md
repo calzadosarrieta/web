@@ -1,30 +1,33 @@
 ---
-title: Zapatillas Caballero
+title: Zapatilla Caballero
 layout: section
 image: img/zapatillas-caballero.webp
 categories:
 
   - title: Zapatillas de casa de caballero de piel
-    filter: zapatillas-caballero/
-    filter2: piel
+    filter-folder: /zapatilla caballero/
+    filter-name: piel
     description: 
 
-
-
   - title: Zapatillas de casa de caballero destalonada
-    filter: zapatillas-caballero/
-    filter2: destalonada
+    filter-folder: /zapatilla caballero/
+    filter-name: destalonada
+    filter-name-not: piel
     description: 
 
   - title: Zapatillas de casa de caballero cerrada
-    filter: zapatillas-caballero/
-    filter2: cerrada
+    filter-folder: /zapatilla caballero/
+    filter-name: cerrada
     description: 
 
   - title: Zapatillas de caballero abiertas
-    filter: zapatillas-caballero/
-    filter2: abierta
+    filter-folder: /zapatilla caballero/
+    filter-name: abierta
     description:
+
+  - title: Más zapatillas de caballero
+    filter-folder: /zapatilla caballero/
+    filter-no-repeat: true
 ---
 
 This is the content of my page

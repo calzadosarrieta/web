@@ -4,6 +4,6 @@ image: img/alpargatas.webp
 layout: section
 categories:
   - title: Todos los productos
-    filter: /productos/
+    filter-folder: /productos/
     description: 
 ---

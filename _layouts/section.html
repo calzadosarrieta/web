@@ -39,6 +39,7 @@
 <!-- Search Box End -->
 
 
+{% assign shown = "" %}
 {% for category in page.categories %}
 <section class="section-products pt-4">
     <div class="container">
@@ -52,12 +53,18 @@
         </div>
         <div class="row old-grid">
             {% assign products = site.pages | sort: 'order' | reverse %}
-
-            {% assign filter2 = category.filter2 | default: 'productos/' %}
-            {% assign filter2OR = category.filter2OR | default: filter2 %}
-            {% assign filter2NOT = category.filter2NOT | default: 'asdfasdfkadflñasdfa' %}
-            {% assign filter3 = category.filter3 | default: 'productos/' %}
-            {% for product in products %}{% if product.image contains category.filter and (product.image contains filter2 or product.image contains filter2OR ) and not (product.image contains filter2NOT ) and product.image contains filter3 %}
+            {% assign filter1 = category.filter-folder | default: 'productos/' %}
+            {% assign filter2 = category.filter-name | default: 'productos/' %}
+            {% assign filter3 = category.filter-name-and | default: 'productos/' %}
+            {% assign filter2OR = category.filter-name-or | default: filter2 %}            
+            {% assign filterNOT = category.filter-name-not | default: 'asdfasdfkadflñasdfa' %}
+            {% assign filterNoRepeat = category.filter-no-repeat | default: '' %}
+            {%- for product in products -%}
+            {%- if product.image contains filter1 and product.image contains filter3 -%}
+            {%- unless product.image contains filterNOT -%}
+            {%- if product.image contains filter2 or product.image contains filter2OR -%}
+            {%- unless filterNoRepeat != '' and shown contains product.image -%}
+            {% assign shown = shown | append: product.image | append: '||' %}
 
             <!-- Start Single Product -->
             {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
@@ -65,6 +72,7 @@
                 <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
                     <a class="favourite-mark toogleFavorite"><i class="fas fa-heart"></i></a>
                     <div class="part-1">
+                        <!--<span class="price">{{ product.price }}€</span>-->
                         {% if product.tags contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
                         {% if product.tags contains "novedad" %}<span class="new">Novedad</span>{% endif %}
                         <ul>
@@ -87,7 +95,7 @@
                 </div>
             </div>
             <!-- End Single Product -->
-            {% endif %}{% endfor %}
+            {%- endunless -%}{%- endif -%}{%- endunless -%}{%- endif -%}{%- endfor -%}
         </div>
     </div>
 </section>

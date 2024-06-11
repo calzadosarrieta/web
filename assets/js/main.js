@@ -64,7 +64,7 @@ function original ($) {
     // Testimonials carousel
     $(".similar-product-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1000,
+        smartSpeed: 800,
         margin: 40,
         dots: true,
         loop: true,
@@ -77,7 +77,7 @@ function original ($) {
                 items:3
             },
             768:{
-                items:6
+                items:4
             },
             992:{
                 items:6
@@ -192,6 +192,8 @@ window.onload = function (){
     }
 
     markFavourites()
+
+    hideEmptySections()
 
     /*let search = window.location.hash.split('search-')[1]
     if (search) { sortProducts( search.replace('-',''))}*/
@@ -377,6 +379,17 @@ function share(destination, product) {
         }
     }    
 }
+
+
+
+function hideEmptySections(){
+    let sections = document.querySelectorAll('.section-products')
+    for (var i = 0; i < sections.length; i++) {
+        let products = sections[i].querySelectorAll('.single-product')
+        if (!products || !products.length) sections[i].style.display = 'none'
+    }
+}
+
 
 
 /* MODULES */
