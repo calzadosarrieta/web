@@ -64,7 +64,7 @@
             {%- unless product.image contains filterNOT -%}
             {%- if product.image contains filter2 or product.image contains filter2OR -%}
             {%- unless filterNoRepeat != '' and shown contains product.image -%}
-            {% assign shown = shown | append: product.image | append: '||' %}
+            {% assign shown = shown | append: product.image | append: '|||' %}
 
             <!-- Start Single Product -->
             {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
