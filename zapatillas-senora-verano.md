@@ -12,7 +12,7 @@ categories:
   - title: Zapatillas destalonadas
     filter-folder: /zapatilla señora verano/
     filter-name: destalonada
-    filter-name-not: pielas
+    filter-name-not: piel
     description: Zapatillas de señora pensadas para el verano, cerradas por los dedos y sin talón
 
   - title: Zapatillas cerradas

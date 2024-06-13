@@ -5,7 +5,7 @@ image: img/alpargatas.webp
 description: 
 categories:
 
-  - title: Alpargatas sanfermineras
+  - title: Alpargatas en blanco y rojo
     filter-folder: /alpargatas/
     filter-name: rojo
     filter-name-or: blanco
