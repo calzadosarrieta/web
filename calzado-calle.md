@@ -5,7 +5,15 @@ image: img/calzado-calle.webp
 categories:
   - title: Calzado deportivo y de montaña
     filter-folder: /calzado de calle/Deportiva y monte
+    filter-name: blanco
+    filter-name-or: rojo
     description: Zapatillas deportivas, de trekking y botas de monte
+
+  - title: 
+    filter-folder: /calzado de calle/Deportiva y monte
+    filter-no-repeat: true
+    description: 
+
 
   - title: Clásicos de calle
     filter-folder: /calzado de calle/Clásicos

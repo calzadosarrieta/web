@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Alpargata plana con gomas roja 
-image: img/productos/alpargatas/Alpargata plana con gomas roja =30.webp
+image: img/productos/alpargatas/Alpargata plana con gomas roja =30=rojo.webp
 price: 30
-tags: 
+tags: rojo
 description: 
 order: 0
 ---
