@@ -453,15 +453,5 @@ function share(destination, product) {
 
 
 
-function hideEmptySections(){
-    let sections = document.querySelectorAll('.section-products')
-    for (var i = 0; i < sections.length; i++) {
-        let products = sections[i].querySelectorAll('.single-product')
-        if (!products || !products.length) sections[i].style.display = 'none'
-    }
-}
-
-
-
 /* MODULES */
 {% include module tag='script' %}

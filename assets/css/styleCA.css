@@ -10138,6 +10138,10 @@ form.success:after {
 
 
 
+.show-more-button ~ p { display: none; }
+.show-more-button { display: block !important; }
+
+
 
 /* MODULES  */
 {% include module tag='style' %}
