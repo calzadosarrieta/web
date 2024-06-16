@@ -27,21 +27,13 @@ sameAs:
 
 
 analytics:
-  #google: GOOGLE_ANALYTICS_ID
-  #mode: privacy # privacy | consent | off
+  google: 290821032 # GOOGLE_ANALYTICS_ID
+  mode: consent # privacy | consent | off
 
 webmaster_verifications:
   google: 1234
 
-
 keywords: calzados alpargatas zapatillas # ignored by Google
-
-      
-
-
-
-
-
 
 
 
@@ -50,10 +42,9 @@ keywords: calzados alpargatas zapatillas # ignored by Google
 sass:
   style: compressed
   sass_dir: _sass
-plugins:
-  - jekyll-seo-tag
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.calzadosarrieta.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-modules:
-  - facade
+#modules:
+#  - facade

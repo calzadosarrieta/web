@@ -274,11 +274,82 @@ function handleProductClick( product ) {
 /* PRODUCT FILTER */
 function cleanString(str){
     if (!str) return ''
-    let accents = { 'á':'a','é':'e','í':'i','ó':'o','ú':'u','ñ':'n','s':''};
-    return str.toLowerCase().replace(/[áéíóúñs\b]/g,v=>accents[v])
+    // Remove funny accents
+    let accents = { 'á':'a','é':'e','í':'i','ó':'o','ú':'u','ñ':'n','s':'',',':''}
+    str = str.toLowerCase().replaceAll(/[áéíóúñ,]|s\b/g,v=>accents[v])
+    // Simple "semantic" search (chatGPT)
+    let semantic = {
+        'sin cuna': 'plana',
+        'loneta':'lona',
+        "señorita":"senora",
+        "mujer":"senora",
+        "hombre":"caballero",
+        "primavera":"verano",
+        "otroño":"invierno",
+        "hogar":"casa",
+        "nino":"infantil",
+        "nina":"infantil",
+        "cerrado":"cerrada",
+        "abierto":"abierta",
+        "plano":"plana",
+        "violeta":"lila",
+        "beig":"beige",
+        "destalonado":"destalonada",
+        "poroso":"porosa",
+        "estampado":"estampada",
+        "cuero":"piel",
+        "blanco":"blanca",
+        "rosado":"rosa",
+        "rosada":"rosa",
+        "rojo":"roja",
+        "relajacion":"descanso",
+        "biorrelax":"biorelax",
+        "alto":"alta",
+        "ligero":"ligera",
+        "forrado":"forrada",
+        "fuxia":"fucsia",
+        "caqui":"kaki",
+        "negro":"negra",
+        "pluma flex":"plumaflex",
+        "amarillo":"amarilla",
+        "rizado":"rizo",
+        "claro":"clara",
+        "oscuro":"oscura",
+        "liso":"lisa",
+        "perrito":"perro",
+        "beige":"beig",
+        "clasico":"clasica",
+        "invernal":"invierno",
+        "decorado":"decorada",
+        "destacado":"destacada",
+        "sensible":"delicado",
+        "montana":"monte",
+        "impermeabilizadas":"impermeable",
+        "deportivo":"deportiva",
+        "no resbala":"antideslizante",
+        "fucsia":"fuxia",
+        "jayber":"j'hayber",
+        "senderismo":"trekking",
+        "grueso":"gruesa",
+        "vaquero":"vaquera",
+        "ortopedico":"ortopedia",
+        "kungfu":"kunfu",
+        "chancla":"chancleta",
+        "metalizado":"metalizada",
+        "centimetros":"cm",
+        "crudo":"cruda",
+        "plateada":"plata",
+        "plateado":"plata",
+        "cruzado":"cruzada",
+        "dorado":"dorada",
+        "bordado":"bordada"
+    }
+    var re = new RegExp(Object.keys(semantic).join("|"),"gi");
+    return str.replace(re, m => semantic[m]);
 }
 
-function sortProducts(query, maxDiff = 0 ){
+function sortProducts(query, maxDiff = 0){
+    if (!query) return
     let products = document.getElementsByClassName('single-product')
     query = cleanString(query).split(' ')
     for (var i = 0; i < products.length; i++) {

@@ -1,4 +1,4 @@
-{%- assign modules = include.name | split: ',' | default: site.modules | default: 'test' -%}
+{%- assign modules = include.name | split: ',' | default: site.modules | default: '' -%}
 {%- assign open  = include.tag | default: 'template' | prepend: '<'  | append: '>' -%}
 {%- assign close = include.tag | default: 'template' | prepend: '</' | append: '>' -%}
 {%- for module in modules -%}
