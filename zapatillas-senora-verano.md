@@ -18,6 +18,7 @@ categories:
   - title: Zapatillas cerradas
     filter-folder: /zapatilla señora verano/
     filter-name: cerrada
+    filter-name-not: piel
     description: Zapatillas de verano cerradas
 
   - title: Zapatillas abiertas (dedos al aire)

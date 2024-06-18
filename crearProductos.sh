@@ -103,4 +103,4 @@ find "$origin" -type f -print0 | while IFS= read -r -d '' file; do
    create_yaml "$file"
 done
 
-read -p "Press enter to continue"
+#read -p "Press enter to continue"
