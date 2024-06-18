@@ -6,7 +6,7 @@ description:
 categories:
 
   - title: Alpargatas en blanco y rojo
-    filter-folder: /alpargatas/
+    filter-folder: /alpargatas/blanco y rojo
     filter-name: rojo
     filter-name-or: blanco
 
