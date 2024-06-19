@@ -267,6 +267,8 @@ function handleProductClick( product ) {
     } else if ( elem.matches('.share *')) {
         let i = elem.tagName == 'I'? elem : elem.getElementsByTagName('I')[0]
         share( i.classList.value, product )
+    } else {
+        goTo( product.dataset.url )
     }
 }
 

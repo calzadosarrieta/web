@@ -1,5 +1,5 @@
 ---
-title: Portada
+title: Bienvenida
 layout: home
 
 featured:

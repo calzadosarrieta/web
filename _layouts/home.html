@@ -9,7 +9,7 @@
             <div class="carousel-inner">
                 {% for especialidad in page.especialidad %}
                 <div class="carousel-item {{ especialidad.class }}">
-                    <div class="w-100 parallax" alt="{{ especialidad.title }}" style="background-image: url('{{ especialidad.image }}'); min-height: 450px;"></div>
+                    <div class="w-100 parallax" alt="{{ especialidad.title }}" style="background-image: url('{{ especialidad.image }}'); min-height: clamp(30rem, 85vh, 50rem)"></div>
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <h2 class="text-primary font-weight-medium m-0">Especialidad en</h2>
                         <h1 class="display-4 text-white">{{ especialidad.title }}</h1>
@@ -37,17 +37,17 @@
                 <h1 class="display-4">A tu servicio desde 1946</h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 py-0 py-lg-5">
+                <div class="col-md-4 col-8 py-0 py-md-5">
                     <h1 class="mb-3">Historia</h1>
                     <p>Te damos la bienvenida a nuestro pequeño comercio. Fundado en el año 1946, distintas generaciones de nuestra familia trabajamos para ofrecerte calidad y atención personalizada. Para ello apostamos por productos de fabricación nacional y larga trayectoria en el mercado. Nuestra estrategia combina la calidad y el conocimiento del producto, con precios ajustados para que vuelvas siempre que quieras. Queremos seguir cuidando de tus pies y de los de los tuyos.</p>
                     <!--<a href="#" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>-->
                 </div>
-                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 300px;">
+                <div class="col-4 py-5 py-md-0" style="min-height: 300px;">
                     <div class="position-relative h-100">
                         <img loading="lazy" alt="Nuestra historia, tradición alpargatera y zapatillera" class="position-absolute w-100 h-100" src="img/historia.webp" style="object-fit: contain;">
                     </div>
                 </div>
-                <div class="col-lg-4 py-0 py-lg-5">
+                <div class="col-md-4 py-0 py-md-5">
                     <h1 class="mb-3">Visión</h1>
                     <p>La meta de Calzados Arrieta es lograr la satisfacción de nuestros clientes asesorando y acompañando en la elección de un calzado que, además de bonito, resulte cómodo, respetuoso con tus pies y de calidad. Todo ello, sin perder de vista nuestro compromiso de mantener los precios todo lo ajustados y asequibles que nos es posible.</p>
 
@@ -96,11 +96,13 @@
 
 
     <!-- Offer Start -->
-    <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
-        <div class="container py-1">
-            <h1 class="display-3 text-primary mt-3">Calidad garantizada</h1>
-            <h1 class="text-white mb-3">Producto 100% nacional</h1>
-            <h4 class="text-white font-weight-normal mb-4 pb-3">Todos nuestros productos son de origen nacional</h4>
+    <div class="offer container-fluid my-5 p-0 text-center position-relative overlay-top overlay-bottom">
+        <div class="scrim m-0 py-5">
+            <div class="container py-1">
+                <h1 class="display-3 text-primary mt-3">Calidad garantizada</h1>
+                <h1 class="text-white mb-3">Producto 100% nacional</h1>
+                <h4 class="text-white font-weight-normal mb-4 pb-3">Todos nuestros productos son de origen nacional</h4>
+            </div>
         </div>
     </div>
     <!-- Offer End -->
@@ -118,15 +120,15 @@
                 {% assign products = site.pages | sort: 'order' | reverse %}
                 {% for product in products %}{% if product.image contains page.featured.filter %}
                 <!-- Begin producto destacado -->
-                <div class="col-lg-6">
+                <div class="col-md-6 col-lg-4">
                     <a href="{{ product.url | absolute_url }}">
                         <div class="row align-items-center mb-5">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <img loading="lazy" class="w-100 rounded-circle mb-3 mb-sm-0" alt="{{ product.title }} {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}" style="object-fit: cover; aspect-ratio: 1;">
                                 {% if product.price %}<h5 class="menu-price">{{ product.price }}€</h5>{% endif %}
                             </div>
-                            <div class="col-8">
-                                <h4>{{ product.title }}</h4>
+                            <div class="col-6">
+                                <h5>{{ product.title }}</h5>
                                 <!--<p class="m-0">{{ product.description }}</p>-->
                             </div>
                         </div>
@@ -206,11 +208,13 @@
 
 
     <!-- Offer Start -->
-    <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
-        <div class="container py-0">
-            <h1 class="display-3 text-primary mt-3">Trato humano</h1>
-            <h1 class="text-white mb-3">Atención personalizada</h1>
-            <h4 class="text-white font-weight-normal mb-4 pb-3">No dudes en ponerte en contacto con nosotros</h4>
+    <div class="offer container-fluid my-5 p-0 text-center position-relative overlay-top overlay-bottom">
+        <div class="scrim m-0 py-5">
+            <div class="container py-1">
+                <h1 class="display-3 text-primary mt-3">Trato humano</h1>
+                <h1 class="text-white mb-3">Atención personalizada</h1>
+                <h4 class="text-white font-weight-normal mb-4 pb-3">No dudes en ponerte en contacto con nosotros</h4>
+            </div>
         </div>
     </div>
     <!-- Offer End -->
