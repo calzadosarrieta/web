@@ -7,7 +7,7 @@ destination="productos"
 
 # https://gist.github.com/oneohthree/f528c7ae1e701ad990e6
 slugify() {
-    slug=$(echo "$1" | xargs -0 printf '%b\n' | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]\/]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
+    slug=$(echo "$1" | xargs -0 printf '%b\n' | iconv -t ascii//TRANSLIT  | tr '[:upper:]' '[:lower:]' | tr 'áéíóúüñ' 'aeiouun' | sed -E -e 's/[^[:alnum:]\/]+/-/g' -e 's/^-+|-+$//g')
     echo "$slug"
 }
 

@@ -1,0 +1,50 @@
+
+
+{%- for product in include.products -%}
+    {%- assign haystack = product.image -%}
+
+    {%- for filter in include.filter -%} 
+        {%- assign outer_bits = filter | split: '&&' -%}
+        {%- assign contains_all_conditions = true -%}
+
+        {%- for outer_bit in outer_bits -%}
+            {%- assign inner_bits = outer_bit | split: '||' -%}
+            {%- assign contains_at_least_one_inner_bit = false -%}
+
+            {%- for inner_bit_s in inner_bits -%}
+                {%- assign inner_bit = inner_bit_s | strip -%}
+
+                {%- if inner_bit == 'NOREPEAT' -%}
+                    {%- if shown contains haystack -%}{%- else -%}
+                        {%- assign contains_at_least_one_inner_bit = true -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- elsif inner_bit contains 'NOT ' -%}
+                    {%- assign actual_bit = inner_bit | remove_first: 'NOT' | strip -%}
+                    {%- if haystack contains actual_bit -%}{%- else -%}
+                        {%- assign contains_at_least_one_inner_bit = true -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- else -%}
+                    {%- if haystack contains inner_bit -%}
+                        {%- assign contains_at_least_one_inner_bit = true -%}
+                        {%- break -%}
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endfor -%}
+
+
+            {%- if contains_at_least_one_inner_bit -%}{%- else -%}
+                {%- assign contains_all_conditions = false -%}
+                {%- break -%}
+            {%- endif -%}
+
+        {%- endfor -%}
+
+        {%- if contains_all_conditions -%}
+            |{{ haystack }}|
+        {%- endif -%}
+
+    {%- endfor -%}
+
+{%- endfor -%}

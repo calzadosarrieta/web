@@ -193,7 +193,7 @@ window.onload = function (){
 
     markFavourites()
 
-    hideEmptySections()
+    //hideEmptySections()
 
     /*let search = window.location.hash.split('search-')[1]
     if (search) { sortProducts( search.replace('-',''))}*/
@@ -455,13 +455,13 @@ function share(destination, product) {
 }
 
 
-function hideEmptySections(){
+/*function hideEmptySections(){
     let sections = document.querySelectorAll('.hide-when-empty')
     for (var i = 0; i < sections.length; i++) {
         let products = sections[i].querySelectorAll('.single-product')
         if (!products || !products.length) sections[i].style.display = 'none'
     }
-}
+}*/
 
 
 

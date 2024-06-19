@@ -39,66 +39,91 @@
 <!-- Search Box End -->
 
 
+{% assign products = site.pages | sort: 'order' | reverse %}
 {% assign shown = "" %}
-{% for category in page.categories %}
-<section class="section-products pt-4 hide-when-empty">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="header">
-                    <h2>{{ category.title }}</h2>
-                    {{ category.description }}
-                </div>
-            </div>
-        </div>
-        <div class="row old-grid">
-            {% assign products = site.pages | sort: 'order' | reverse %}
-            {% assign filter1 = category.filter-folder | default: 'productos/' %}
-            {% assign filter2 = category.filter-name | default: 'productos/' %}
-            {% assign filter3 = category.filter-name-and | default: 'productos/' %}
-            {% assign filter2OR = category.filter-name-or | default: filter2 %}            
-            {% assign filterNOT = category.filter-name-not | default: 'asdfasdfkadflñasdfa' %}
-            {% assign filterNoRepeat = category.filter-no-repeat | default: '' %}
-            {%- for product in products -%}
-            {%- if product.image contains filter1 and product.image contains filter3 -%}
-            {%- unless product.image contains filterNOT -%}
-            {%- if product.image contains filter2 or product.image contains filter2OR -%}
-            {%- unless filterNoRepeat != '' and shown contains product.image -%}
-            {% assign shown = shown | append: product.image | append: '|||' %}
 
-            <!-- Start Single Product -->
-            {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
-            {% else %}<div class="col-md-6 col-lg-4 col-xl-3">{% endif %}
-                <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
-                    <a class="favourite-mark toogleFavorite"><i class="fas fa-heart"></i></a>
-                    <div class="part-1">
-                        <!--<span class="price">{{ product.price }}€</span>-->
-                        {% if product.tags contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
-                        {% if product.tags contains "novedad" %}<span class="new">Novedad</span>{% endif %}
-                        <ul>
-                            <li><a href="{{ product.url | absolute_url }}"><i class="fas fa-shopping-cart"></i></a></li>
-                            <li class="toogleFavorite"><a><i class="fas fa-heart"></i></a></li>
-                            <li class="showShare"><a><i class="fas fa-share-alt"></i></a></li>
-                            <li class="preview"><a><i class="fas fa-expand"></i></a></li>
-                            <li class="share"><a><i class="fab fa-whatsapp"></i></a></li>
-                            <li class="share"><a><i class="fab fa-facebook"></i></a></li>
-                            <li class="share"><a><i class="fas fa-envelope"></i></a></li>
-                            <li class="clipboard"><a><i class="fa fa-clipboard"></i></a></li>
-                            <li class="share"><a><i class="fa-brands fa-x-twitter"></i></a></li>
-                        </ul>
-                        <img class="part-1-before" loading="lazy" alt="{{ product.title }} | {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}">
-                    </div>
-                    <div class="part-2">
-                        <h3 class="product-title">{{ product.title }}</h3>
-                        {% if product.price %}<h4 class="product-price">{{ product.price }}€</h4>{% endif %}
+{% for category in page.categories %}
+    
+    {%- if category.filter -%}
+        {%- assign filter = category.filter -%}
+    {%- else -%}<!-- Legacy support -->
+        {% assign filter = category.filter-folder | default: 'productos/' %}
+        {%- if category.filter-name -%}
+            {% assign filter = filter | append: ' && ' | append: category.filter-name %}
+            {%- if category.filter-name-or -%}
+                {% assign filter = filter | append: ' || ' | append: category.filter-name-or %}
+            {%- endif -%}
+        {%- endif -%}
+        {%- if category.filter-name-and -%}
+            {% assign filter = filter | append: ' && ' | append: category.filter-name-and %}
+            {%- if category.filter-name-or -%}
+                {% assign filter = filter | append: ' || ' | append: category.filter-name-or %}
+            {%- endif -%}
+        {%- endif -%}
+        {%- if category.filter-name-not -%}
+            {% assign filter = filter | append: ' &&  NOT ' | append: category.filter-name-not %}
+        {%- endif -%}
+        {%- if category.filter-no-repeat -%}
+            {% assign filter = filter | append: ' &&  NOREPEAT '%}
+        {%- endif -%}
+        {% assign filter = filter | split: 'asdfasfieañasdfadsf5apaodj0' %}
+    {%- endif -%}
+
+
+    {%- capture matched -%}
+        {% include magic_filter filter=filter products=products shown=shown %}
+    {%- endcapture -%}
+
+    {%- if matched contains '|' -%}
+    <section class="section-products pt-4 hide-when-empty">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="header">
+                        <h2>{{ category.title }}</h2>
+                        {{ category.description }}
                     </div>
                 </div>
             </div>
-            <!-- End Single Product -->
-            {%- endunless -%}{%- endif -%}{%- endunless -%}{%- endif -%}{%- endfor -%}
+            <div class="row old-grid">
+
+
+            {%- for product in products -%}{%- if matched contains product.image -%}
+                <!-- Start Single Product -->
+                {% assign shown = shown | append: product.image | append: '|||' %}
+                {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
+                {% else %}<div class="col-md-6 col-lg-4 col-xl-3">{% endif %}
+                        <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
+                            <a class="favourite-mark toogleFavorite"><i class="fas fa-heart"></i></a>
+                            <div class="part-1">
+                                <!--<span class="price">{{ product.price }}€</span>-->
+                                {% if product.tags contains "oferta" %}<span class="discount">Oferta</span>{% endif %}
+                                {% if product.tags contains "novedad" %}<span class="new">Novedad</span>{% endif %}
+                                <ul>
+                                    <li><a href="{{ product.url | absolute_url }}"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li class="toogleFavorite"><a><i class="fas fa-heart"></i></a></li>
+                                    <li class="showShare"><a><i class="fas fa-share-alt"></i></a></li>
+                                    <li class="preview"><a><i class="fas fa-expand"></i></a></li>
+                                    <li class="share"><a><i class="fab fa-whatsapp"></i></a></li>
+                                    <li class="share"><a><i class="fab fa-facebook"></i></a></li>
+                                    <li class="share"><a><i class="fas fa-envelope"></i></a></li>
+                                    <li class="clipboard"><a><i class="fa fa-clipboard"></i></a></li>
+                                    <li class="share"><a><i class="fa-brands fa-x-twitter"></i></a></li>
+                                </ul>
+                                <img class="part-1-before" loading="lazy" alt="{{ product.title }} | {{ product.price }} {{ product.description }}" src="{{ product.image | absolute_url | uri_escape }}">
+                            </div>
+                            <div class="part-2">
+                                <h3 class="product-title">{{ product.title }}</h3>
+                                {% if product.price %}<h4 class="product-price">{{ product.price }}€</h4>{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Product -->
+                {%- endif -%}{%- endfor -%}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    {% endif %}
 {% endfor %}
 
 
