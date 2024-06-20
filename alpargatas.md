@@ -28,11 +28,19 @@ categories:
     filter-name-not: /alpargatas/blanco y rojo
     description: Alpargatas con menos de 2 centímetros de cuña
 
+
   - title: Alpargatas Caballero
     filter-folder: /alpargatas/
     filter-name: caballero
     filter-name-not: /alpargatas/blanco y rojo
     description: Alpargatas de caballero
+
+
+  - title: Alpargatas diferentes
+    filter-folder: /alpargatas/
+    filter-name: últimos pares
+    description: Aquí encontrarás algunas de nuestras alpargatas de colores especiales, en materiales como la seda, el nobuck, la piel,..pero date prisa, nos quedan pocos pares!!
+
 
   - title: Alpargatas personalizadas
     filter-folder: /alpargatas/
