@@ -27,7 +27,7 @@ sameAs:
 
 
 analytics:
-  google: 290821032 # GOOGLE_ANALYTICS_ID UA-52447-2
+  google: UA-52447-2 # GOOGLE_ANALYTICS_ID 
   mode: consent # privacy | consent | off
 
 #google-site-verification: 1234
