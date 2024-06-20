@@ -9554,12 +9554,12 @@ h6,
 }
 
 .overlay-top::before {
-  top: -1px;
+  top: -2px;
   background: url(../../img/overlay-top.webp);
 }
 
 .overlay-bottom::after {
-  bottom: -1px;
+  bottom: -2px;
   background: url(../../img/overlay-bottom.webp);
 }
 
@@ -9683,14 +9683,19 @@ h6,
 .parallax,
 .footer {
   background: url(../../img/bg.webp);
-  /*background-position: top;*/
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
   background-attachment: fixed;
-  background-position: center;
 }
 
+.footer {
+  background-position: top;
+}
+
+.offer {
+  height: 340px;
+}
 
 @media only screen and (max-width: 992px){
   .carousel-item .parallax {
@@ -9953,7 +9958,7 @@ div.single-product.sharing li { display: inline-block !important; }
   grid-auto-flow: dense !important;
 }
 
-@media (min-width: 768px){
+@media (min-width: 576px){
   .old-grid { grid-template-columns: 50% 50%; }
   .old-grid .doble { grid-column-end: span 2; }
   .old-grid .dobley { grid-row-end: span 2; }
@@ -10160,6 +10165,31 @@ form.success:after {
 
 .show-more-button ~ p { display: none; }
 .show-more-button { display: block !important; }
+
+
+
+
+.hero {
+  width: 100vw;
+  overflow: hidden;
+  top: 0;
+  position: relative;
+  height: 85vmin;
+}
+.page-header, .page-header > div {
+    height: 65vmin; 
+      top: 0;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .hero { 
+    height: 65vmin;
+  }
+  .page-header, .page-header > div {
+    height: 40vmin; 
+  }
+}
 
 
 

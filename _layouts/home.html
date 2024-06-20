@@ -9,9 +9,9 @@
             <div class="carousel-inner">
                 {% for especialidad in page.especialidad %}
                 <div class="carousel-item {{ especialidad.class }}">
-                    <div class="w-100 parallax" alt="{{ especialidad.title }}" style="background-image: url('{{ especialidad.image }}'); min-height: clamp(30rem, 85vh, 50rem)"></div>
+                    <div class="parallax hero" alt="{{ especialidad.title }}" style="background-image: url('{{ especialidad.image }}');"></div>
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <h2 class="text-primary font-weight-medium m-0">Especialidad en</h2>
+                        <h5 class="text-primary font-weight-medium m-0">Especialidad en</h5>
                         <h1 class="display-4 text-white">{{ especialidad.title }}</h1>
                         <h3 class="text-white"><i>desde 1946</i></h3>
                     </div>
