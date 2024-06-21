@@ -31,6 +31,7 @@ create_yaml() {
     if [[ $fullname =~ "destacado-3" ]]; then order="3";
     elif [[ $fullname =~ "destacado-2" ]]; then order="2";
     elif [[ $fullname =~ "destacado" ]]; then order="1";
+    elif [[ $fullname =~ "zzz" ]]; then order="-1";
     else order="0"; fi;
 
     # Append number to duplicated files

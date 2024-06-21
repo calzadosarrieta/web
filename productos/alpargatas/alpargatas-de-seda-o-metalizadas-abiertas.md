@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Alpargatas de seda o metalizadas abiertas
-image: img/productos/alpargatas/Alpargatas de seda o metalizadas abiertas==tipo sandalia últimos pares.webp
+image: img/productos/alpargatas/Alpargatas de seda o metalizadas abiertas==tipo sandalia últimos pares gris amarillos camel negro.webp
 price: 
-tags: tipo sandalia últimos pares
+tags: tipo sandalia últimos pares gris amarillos camel negro
 description: 
 order: 0
 ---

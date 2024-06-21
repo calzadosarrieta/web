@@ -1,9 +1,9 @@
 ---
 layout: product
 title: Alpargata abierta con o sin cuña. 
-image: img/productos/alpargatas/Alpargata abierta con o sin cuña. ==tipo lola últimos pares.webp
+image: img/productos/alpargatas/Alpargata abierta con o sin cuña. ==tipo lola últimos pares vaquero crudo.webp
 price: 
-tags: tipo lola últimos pares
+tags: tipo lola últimos pares vaquero crudo
 description: 
 order: 0
 ---
