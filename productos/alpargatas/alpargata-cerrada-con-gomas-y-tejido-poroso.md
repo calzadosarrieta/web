@@ -1,5 +1,6 @@
 ---
 layout: product
+id: 2be9ad89862debcbb0c222b1eb3228
 title: Alpargata cerrada con gomas y tejido poroso 
 image: img/productos/alpargatas/Alpargata cerrada con gomas y tejido poroso =35=doble=marrón verde kaki amarillo mostaza caballero.webp
 price: 35

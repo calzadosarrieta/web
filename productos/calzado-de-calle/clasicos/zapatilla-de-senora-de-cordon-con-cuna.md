@@ -1,5 +1,6 @@
 ---
 layout: product
+id: 9cf7cb552d3b056439f153df9adab2
 title: Zapatilla de señora de cordón con cuña
 image: img/productos/calzado de calle/Clásicos/Zapatilla de señora de cordón con cuña=18=azul marino negro blanco beige verano clásicos.webp
 price: 18

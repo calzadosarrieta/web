@@ -1,5 +1,6 @@
 ---
 layout: product
+id: d6cfe8efe81a4a13d0ead604889159
 title: Zapatilla de caballero de velcro
 image: img/productos/calzado de calle/Clásicos/Zapatilla de caballero de velcro=34 = cutillas azul marino marron  ortopedia clásicos.webp
 price: 34 

@@ -103,7 +103,7 @@ detect_changes(){
 
 rm -rf productos/*
 # Find all files within the specified subfolder and create YAML files
-find "$origin" -type f -print0 | sort | while IFS= read -r -d '' file; do
+find "$origin" -type f -print0 | sort -z | while IFS= read -r -d '' file; do
    create_yaml "$file"
 done
 

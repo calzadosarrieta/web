@@ -1,5 +1,6 @@
 ---
 layout: product
+id: df4c2df1f7b6b2c47b42bc0beeadd5
 title: Alpargata espiga caballero 
 image: img/productos/Alpargata espiga caballero =17 = destacado =blanco rojo negro azul kaki burdeos marrón.webp
 price: 17 
