@@ -7,7 +7,7 @@ destination="productos"
 
 # https://gist.github.com/oneohthree/f528c7ae1e701ad990e6
 slugify() {
-    slug=$(echo "$1" | xargs -0 printf '%b\n' | iconv -t ascii//TRANSLIT  | tr '[:upper:]' '[:lower:]' | tr 'áéíóúüñ' 'aeiouun' | sed -E -e 's/[^[:alnum:]\/]+/-/g' -e 's/^-+|-+$//g')
+    slug=$(echo "$1" | xargs -0 printf '%b\n' | tr '[:upper:]' '[:lower:]' | sed -E -e 's/ñ|Ñ/n/g' -e 's/á|Á/a/g' -e 's/é|É/e/g' -e 's/í|Í/i/g' -e 's/ó|Ó/o/g' -e 's/ú|Ú/u/g' | sed -E -e 's/[^[:alnum:]\/]+/-/g' -e 's/^-+|-+$//g')
     echo "$slug"
 }
 
@@ -100,7 +100,7 @@ detect_changes(){
 
 rm -rf productos/*
 # Find all files within the specified subfolder and create YAML files
-find "$origin" -type f -print0 | while IFS= read -r -d '' file; do
+find "$origin" -type f -print0 | sort | while IFS= read -r -d '' file; do
    create_yaml "$file"
 done
 

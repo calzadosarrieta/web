@@ -30,7 +30,7 @@ analytics:
   google: G-9D2Y0W5E06 # GOOGLE_ANALYTICS_ID 
   mode: consent # privacy | consent | off
 
-#google-site-verification: 1234
+google-site-verification: L71wuk9454qsIa0TDrxzg0Fveq8SuRXlnq3QIeMGk5o
 
 keywords: calzados alpargatas zapatillas # ignored by Google
 
