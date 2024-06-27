@@ -1,0 +1,43 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    {% assign products = site.pages | sort: 'order' | reverse %}
+    {% for product in products %}{% if product.layout == 'product' and product.redirect == null %}
+    <item>
+      <g:id>{{ product.id }}</g:id>
+      <title>{{ product.title | xml_escape }}</title>
+      <description>{{ product.description | xml_escape }}</description>
+      <link>{{ product.url | absolute_url }}</link>
+      <g:image_link>{{ product.image | absolute_url }}</g:image_link>
+      <g:price>{{ product.price }} EUR</g:price>
+      <g:condition>{{ product.condition | default: "new"  }}</g:condition>
+      <g:availability>{{ product.availability | default: "in stock" }}</g:availability>
+      <g:identifier_exists>false</g:identifier_exists>
+      <!-- Add other necessary fields here -->
+    </item>
+    {% endif %}{% endfor %}
+  </channel>
+</rss>
+
+<!--
+      <g:brand>{{ product.brand }}</g:brand>
+      <g:gtin>{{ product.gtin }}</g:gtin>
+      <g:mpn>{{ product.mpn }}</g:mpn>
+- id: 1
+  title: "Producto 1"
+  description: "Descripción del producto 1"
+  url: "/productos/producto-1"
+  image: "/assets/images/producto-1.jpg"
+  price: "29.99 USD"
+  condition: "new"
+  availability: "in stock"
+  brand: "Marca 1"
+  gtin: "1234567890123"
+  mpn: "MPN123456"
+-->

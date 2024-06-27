@@ -36,6 +36,8 @@ create_yaml() {
 
     # Append number to duplicated files
     if [ -e "$dir/$slug.md" ]; then
+        #slug="${slug}-$( echo -n "$fullname" | sha256sum | cut -c 1-5)"
+        #slug="${slug}-${filename_parts[1]} # price
         for i in 2 3 4 5 6 7 8 9; do
             if [ ! -e "$dir/$slug-$i.md" ]; then
                 slug="${slug}-${i}"
@@ -44,10 +46,11 @@ create_yaml() {
         done
     fi
 
-    # Create YAML content
+    # Create YAML content date: $(date +%s -r "$filepath")
 if [[ -z "$2" ]]; then
 echo "---
 layout: product
+id: $( echo -n "$slug" | sha256sum | cut -c 1-30)
 title: ${filename_parts[0]}
 image: $filepath
 price: ${filename_parts[1]}
