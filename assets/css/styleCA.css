@@ -9581,7 +9581,7 @@ h6,
 .linear-scrim {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(51, 33, 29, 0.25), rgba(51, 33, 29, 0.8), rgba(51, 33, 29, 0.25));
+  background: linear-gradient(to bottom, rgba(51, 33, 29, 0.4), rgba(51, 33, 29, 0.7), rgba(51, 33, 29, 0.4));
 }
 
 @media (min-width: 992px) {
@@ -10189,6 +10189,36 @@ form.success:after {
   .page-header, .page-header > div {
     height: 55vmin; 
   }
+}
+
+
+
+.searchBox {
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+  z-index: 2;
+}
+
+
+.order1 {
+  order: -1;
+}
+
+.order2 {
+  order: -2;
+}
+
+.order3 {
+  order: -3;
+}
+
+.order4 {
+  order: -4;
+}
+
+.order5 {
+  order: -5;
 }
 
 

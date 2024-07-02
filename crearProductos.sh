@@ -18,13 +18,18 @@ create_yaml() {
     local filepath="$1"
     local fullname=$(basename "$filepath")
     local filename="${fullname%.*}"
+    local md5=$( md5sum "$filepath" | cut -c 1-16) # Collision Prob -> https://kevingal.com/apps/collision.html
+    local short=$( echo "$md5" | cut -c 1-3)
     local dir="$(dirname "$filepath")"
     dir=$(slugify "${dir/$origin/$destination}")
+    #local dir="$destination"
+    
 
     # Split filename into an array using the separator |
     IFS="=" read -r -a filename_parts <<< "$filename"
 
     slug=$(slugify "${filename_parts[0]}")
+    slug="${slug}-${short}"
 
     mkdir -p "$dir"
 
@@ -34,23 +39,15 @@ create_yaml() {
     elif [[ $fullname =~ "zzz" ]]; then order="-1";
     else order="0"; fi;
 
-    # Append number to duplicated files
-    if [ -e "$dir/$slug.md" ]; then
-        #slug="${slug}-$( echo -n "$fullname" | sha256sum | cut -c 1-5)"
-        #slug="${slug}-${filename_parts[1]} # price
-        for i in 2 3 4 5 6 7 8 9; do
-            if [ ! -e "$dir/$slug-$i.md" ]; then
-                slug="${slug}-${i}"
-                break
-            fi
-        done
-    fi
+    
+    
 
     # Create YAML content date: $(date +%s -r "$filepath")
+
 if [[ -z "$2" ]]; then
 echo "---
 layout: product
-id: $( echo -n "$slug" | sha256sum | cut -c 1-30)
+id: $md5
 title: ${filename_parts[0]}
 image: $filepath
 price: ${filename_parts[1]}

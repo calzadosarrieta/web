@@ -18,12 +18,13 @@
 
 
 <!-- Search Box Start -->
-<div id="searchBox" class="container row mt-1 align-items-center" style="margin: auto;">
-    <div class="search contact-form col-md-6 mt-4">
+<div id="searchBox"></div>
+<div class="searchBox container row mt-1 align-items-center" style="margin: auto;">
+    <div class="search contact-form col-md-6 my-2">
         <input onkeyup="sortProducts(this.value)" type="text" class="form-control p-4" name="query" placeholder="Encuentra tus zapatillas ideales" onfocus='goTo("{{ 'nuestros-productos.html#searchBox' | absolute_url }}")'/>
         <i class="fa fa-search"></i>
     </div>
-    <div class="contact-form col-md-6 mt-4">
+    <div class="contact-form col-md-6 mt-2">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ page.title }}
@@ -85,15 +86,19 @@
                     </div>
                 </div>
             </div>
+            {% if page.search %}
+                <div style="display: none; margin: -1em auto 2em auto; font-size: 0.9em; font-style: italic;" id="noItems">
+                    {{ page.search }}
+                </div>
+            {% endif %}  
             <div class="row old-grid">
-
 
             {%- for product in products -%}{%- if matched contains product.image -%}
                 <!-- Start Single Product -->
                 {% assign shown = shown | append: product.image | append: '|||' %}
                 {% if product.tags contains "doble" %}<div class="doble col-md-12 col-lg-8 col-xl-6">
                 {% else %}<div class="col-md-6 col-lg-4 col-xl-3">{% endif %}
-                        <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}">
+                        <div class="single-product" data-image="{{ product.image | absolute_url }}" data-url="{{ product.url | absolute_url }}" onclick="handleProductClick(this)" data-description="{{ product.title }} {{ product.price }} {{ product.description }}" data-title="{{ product.title }}" data-id="{{ product.id }}">
                             <a class="favourite-mark toogleFavorite"><i class="fas fa-heart"></i></a>
                             <div class="part-1">
                                 <!--<span class="price">{{ product.price }}€</span>-->

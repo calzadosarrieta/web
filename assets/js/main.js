@@ -274,97 +274,150 @@ function handleProductClick( product ) {
 
 
 /* PRODUCT FILTER */
-function cleanString(str){
+function cleanString(str ){
     if (!str) return ''
     // Remove funny accents
     let accents = { 'á':'a','é':'e','í':'i','ó':'o','ú':'u','ñ':'n','s':'',',':''}
-    str = str.toLowerCase().replaceAll(/[áéíóúñ,]|s\b/g,v=>accents[v])
-    // Simple "semantic" search (chatGPT)
-    let semantic = {
-        'sin cuna': 'plana',
-        'loneta':'lona',
-        "señorita":"senora",
-        "mujer":"senora",
-        "hombre":"caballero",
-        "primavera":"verano",
-        "otoño":"invierno",
-        "hogar":"casa",
-        "nino":"infantil",
-        "nina":"infantil",
-        "cerrado":"cerrada",
-        "abierto":"abierta",
-        "plano":"plana",
-        "violeta":"lila",
-        "beig":"beige",
-        "destalonado":"destalonada",
-        "poroso":"porosa",
-        "estampado":"estampada",
-        "cuero":"piel",
-        "blanco":"blanca",
-        "rosado":"rosa",
-        "rosada":"rosa",
-        "rojo":"roja",
-        "relajacion":"descanso",
-        "biorrelax":"biorelax",
-        "alto":"alta",
-        "ligero":"ligera",
-        "ultraligera":"microporosa",
-        "especial parque":"microporosa",
-        "especial parquet":"microporosa",
-        "forrado":"forrada",
-        "fuxia":"fucsia",
-        "caqui":"kaki",
-        "negro":"negra",
-        "pluma flex":"plumaflex",
-        "amarillo":"amarilla",
-        "rizado":"rizo",
-        "claro":"clara",
-        "oscuro":"oscura",
-        "liso":"lisa",
-        "perrito":"perro",
-        "beige":"beig",
-        "clasico":"clasica",
-        "invernal":"invierno",
-        "decorado":"decorada",
-        "destacado":"destacada",
-        "sensible":"delicado",
-        "montana":"monte",
-        "impermeabilizadas":"impermeable",
-        "deportivo":"deportiva",
-        "no resbala":"antideslizante",
-        "fucsia":"fuxia",
-        "jayber":"j'hayber",
-        "senderismo":"trekking",
-        "grueso":"gruesa",
-        "vaquero":"vaquera",
-        "ortopedico":"ortopedia",
-        "kungfu":"kunfu",
-        "chancla":"chancleta",
-        "metalizado":"metalizada",
-        "centimetros":"cm",
-        "crudo":"cruda",
-        "plateada":"plata",
-        "plateado":"plata",
-        "cruzado":"cruzada",
-        "dorado":"dorada",
-        "bordado":"bordada"
-    }
-    var re = new RegExp(Object.keys(semantic).join("|"),"gi");
-    return str.replace(re, m => semantic[m]);
+    return str.toLowerCase().replaceAll(/[áéíóúñ,]|s\b/g,v=>accents[v])
 }
+
+function synonyms(str) {
+    // replace all words for their canonical synonym
+    var re = new RegExp(Object.keys(semantic).join("|"),"gi");
+    str = str.replace(re, m => semantic[m]);
+
+    // Now, for each canonical synonym, add their versions
+    var re = new RegExp(Object.keys(citnames).join("|"),"gi");
+    str = str.replace(re, m => citnames[m] );
+    return str
+}
+
+let semantic = {
+    'sin cuna': 'plana',
+    'loneta':'lona',
+    "senorita":"senora",
+    "mujer":"senora",
+    "hombre":"caballero",
+    "primavera":"verano",
+    "otono":"invierno",
+    "hogar":"casa",
+    "nino":"infantil",
+    "nina":"infantil",
+    "cerrado":"cerrada",
+    "abierto":"abierta",
+    "plano":"plana",
+    "violeta":"lila",
+    "beig":"beige",
+    "destalonado":"destalonada",
+    "poroso":"porosa",
+    "estampado":"estampada",
+    "cuero":"piel",
+    "blanco":"blanca",
+    "rosado":"rosa",
+    "rosada":"rosa",
+    "rojo":"roja",
+    "relajacion":"descanso",
+    "biorrelax":"biorelax",
+    "alto":"alta",
+    "ligero":"ligera",
+    "ultraligera":"microporosa",
+    "especial parque":"microporosa",
+    "especial parquet":"microporosa",
+    "forrado":"forrada",
+    "fuxia":"fucsia",
+    "caqui":"kaki",
+    "negro":"negra",
+    "pluma flex":"plumaflex",
+    "amarillo":"amarilla",
+    "rizado":"rizo",
+    "claro":"clara",
+    "oscuro":"oscura",
+    "liso":"lisa",
+    "perrito":"perro",
+    "beige":"beig",
+    "clasico":"clasica",
+    "invernal":"invierno",
+    "decorado":"decorada",
+    "destacado":"destacada",
+    "sensible":"delicado",
+    "montana":"monte",
+    "impermeabilizadas":"impermeable",
+    "deportivo":"deportiva",
+    "no resbala":"antideslizante",
+    "fucsia":"fuxia",
+    "jayber":"j'hayber",
+    "senderismo":"trekking",
+    "grueso":"gruesa",
+    "vaquero":"vaquera",
+    "ortopedico":"ortopedia",
+    "kungfu":"kunfu",
+    "chancla":"chancleta",
+    "metalizado":"metalizada",
+    "centimetros":"cm",
+    "crudo":"cruda",
+    "plateada":"plata",
+    "plateado":"plata",
+    "cruzado":"cruzada",
+    "dorado":"dorada",
+    "bordado":"bordada"
+}
+
+
+function objectFlip(obj) {
+  const ret = {};
+      Object.keys(obj).forEach(key => {
+        ret[obj[key]] = ret[obj[key]]? ret[obj[key]] + ' ' + key : obj[key] + ' ' + key
+      });
+  return ret;
+}
+let citnames = objectFlip(semantic)
 
 function sortProducts(query, maxDiff = 0){
     if (!query) return
-    let products = document.getElementsByClassName('single-product')
-    query = cleanString(query).split(' ')
-    for (var i = 0; i < products.length; i++) {
-        let filter = cleanString( decodeURI(products[i].dataset.image) + products[i].classList.value)
-        let matches = query.filter((word) => filter.includes(word)).length;
-        products[i].parentNode.style.order = - matches
-        products[i].parentNode.style.display = matches  + maxDiff < query.length? 'none' : 'block'
-    }
+    //console.log('sortProducts:', query, maxDiff)
+
+    // Scroll to search box
     let box = document.getElementById('searchBox')
     if (box) box.scrollIntoView({ behavior: "smooth"});
+
+
+    // Sort products
+    let products = document.getElementsByClassName('single-product')
+    query = cleanString(query).split(' ')
+    let ids = {}
+    for (var i = 0; i < products.length; i++) {
+        if (!products[i].dataset.filter) {
+            products[i].dataset.filter = synonyms(cleanString( decodeURI(products[i].dataset.image) + products[i].classList.value))
+        }
+        let filter = products[i].dataset.filter
+
+        let matches = query.filter((word) => filter.includes(word)).length;
+        products[i].parentNode.style.order = - matches
+
+        let skip = (products[i].dataset.id && ids[products[i].dataset.id] )? true : false
+        if (skip || query.length - matches > maxDiff) {
+            products[i].parentNode.style.display = 'none'
+        } else {
+            ids[products[i].dataset.id] = products[i].dataset.title
+            products[i].parentNode.style.display = 'block'
+        }        
+    }
+
+    let noItems = document.getElementById('noItems')    
+    if ( Object.keys(ids).length == 0 && maxDiff != Infinity ){
+        for (var i = 0; i < products.length; i++) {
+            if (products[i].dataset.id && ids[products[i].dataset.id] ) {
+                products[i].parentNode.style.display = 'none'
+            } else {
+                ids[products[i].dataset.id] = products[i].dataset.title
+                products[i].parentNode.style.display = 'block'
+            }        
+        }
+        if( noItems) noItems.style.display = 'block'
+    } else {
+        if( noItems) noItems.style.display = 'none'
+    }
+
 }
 
 
