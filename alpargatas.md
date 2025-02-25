@@ -5,11 +5,6 @@ image: img/alpargatas.webp
 description: 
 categories:
 
-  - title: 
-    filter-folder: 
-    filter-name: 
-    filter-name-or: 
-
   - title: Alpargatas con cuña alta
     filter-folder: /alpargatas/
     filter-name: cuña alta
