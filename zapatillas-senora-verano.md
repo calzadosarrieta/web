@@ -4,10 +4,7 @@ layout: section
 image: img/zapatillas-senora-verano.webp
 categories:
  
-  - title: Zapatillas de piel
-    filter-folder: /zapatilla señora verano/
-    filter-name: piel
-    description:
+
 
   - title: Zapatillas destalonadas
     filter-folder: /zapatilla señora verano/
@@ -25,6 +22,11 @@ categories:
     filter-folder: /zapatilla señora verano/
     filter-name: abierta
     description: Aquí tienes nuestras zapatillas de verano abiertas, que dejarán tus deditos al aire
+
+  - title: Zapatillas de piel
+    filter-folder: /zapatilla señora verano/
+    filter-name: piel
+    description:
 
   - title: Más zapatillas de señora para verano
     filter-folder: /zapatilla señora verano/

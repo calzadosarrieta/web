@@ -4,10 +4,7 @@ layout: section
 image: img/zapatillas-senora-invierno.webp
 categories:
 
-  - title: Zapatillas de casa de piel
-    filter-folder: /zapatilla señora invierno/
-    filter-name: piel
-    description:
+
 
   - title: Zapatillas de casa de invierno destalonada
     filter-folder: /zapatilla señora invierno/
@@ -24,6 +21,12 @@ categories:
   - title: Más zapatillas de señora para invierno
     filter-folder: /zapatilla señora invierno/
     filter-no-repeat: true
+
+  - title: Zapatillas de casa de piel
+    filter-folder: /zapatilla señora invierno/
+    filter-name: piel
+    description:
+
 ---
 
 This is the content of my page

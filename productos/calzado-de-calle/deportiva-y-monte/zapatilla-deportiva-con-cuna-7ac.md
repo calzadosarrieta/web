@@ -2,9 +2,9 @@
 layout: product
 id: 7ac82440d3632a2e
 title: Zapatilla deportiva con cuña
-image: img/productos/calzado de calle/Deportiva y monte/Zapatilla deportiva con cuña=41=kelme blanco negro.webp
+image: img/productos/calzado de calle/Deportiva y monte/Zapatilla deportiva con cuña=41=doble=kelme blanco negro.webp
 price: 41
-tags: kelme blanco negro
-description: 
+tags: doble
+description: kelme blanco negro
 order: 0
 ---

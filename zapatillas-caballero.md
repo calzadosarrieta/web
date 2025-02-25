@@ -4,10 +4,7 @@ layout: section
 image: img/zapatillas-caballero.webp
 categories:
 
-  - title: Zapatillas de casa de caballero de piel
-    filter-folder: /zapatilla caballero/
-    filter-name: piel
-    description: Zapatillas de piel
+
 
   - title: Zapatillas de casa de caballero destalonada
     filter-folder: /zapatilla caballero/
@@ -30,6 +27,11 @@ categories:
   - title: Más zapatillas de caballero
     filter-folder: /zapatilla caballero/
     filter-no-repeat: true
+
+  - title: Zapatillas de casa de caballero de piel
+    filter-folder: /zapatilla caballero/
+    filter-name: piel
+    description: Zapatillas de piel
 ---
 
 This is the content of my page
