@@ -5,10 +5,10 @@ image: img/alpargatas.webp
 description: 
 categories:
 
-  - title: Alpargatas en blanco y rojo
-    filter-folder: /alpargatas/blanco y rojo
-    filter-name: rojo
-    filter-name-or: blanco
+  - title: 
+    filter-folder: 
+    filter-name: 
+    filter-name-or: 
 
   - title: Alpargatas con cuña alta
     filter-folder: /alpargatas/
