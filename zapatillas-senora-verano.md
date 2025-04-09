@@ -1,5 +1,5 @@
 ---
-title: Zapatillas Señora Verano
+title: Zapatillas Señora e Infantil Verano
 layout: section
 image: img/zapatillas-senora-verano.webp
 categories:
