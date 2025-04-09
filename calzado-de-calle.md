@@ -3,10 +3,17 @@ title: Calzado de calle
 layout: section
 image: img/calzado-calle.webp
 categories:
+
+  - title: Calzado Infantil y respetuoso
+    filter-folder: /calzado de calle/Clásicos
+    filter-name: infantil
+    filter-name-or: respetuoso
+    description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 
+
   - title: Calzado deportivo y de montaña
     filter-folder: /calzado de calle/Deportiva y monte
-    filter-name: blanco
-    filter-name-or: rojo
+    filter-name: deportiva
+    filter-name-or:
     description: Zapatillas deportivas, de trekking y botas de monte
 
   - title: 
