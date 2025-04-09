@@ -5,7 +5,7 @@ image: img/calzado-calle.webp
 categories:
 
   - title: Calzado Infantil y respetuoso
-    filter-folder: /calzado de calle/Clásicos
+    filter-folder: /calzado de calle/Infantil y respetuoso
     filter-name: infantil
     filter-name-or: respetuoso
     description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 

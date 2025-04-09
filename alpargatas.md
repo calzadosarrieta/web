@@ -45,4 +45,5 @@ categories:
   - title: Más alpargatas
     filter-folder: /alpargatas/
     filter-no-repeat: true
+    filter-name-not: /alpargatas/blanco y rojo
 ---
