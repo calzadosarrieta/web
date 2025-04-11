@@ -17,15 +17,17 @@ categories:
     filter-name: cerrada
     filter-name-not: piel
     description: Nuestras zapatillas más sujetas y abrigadas
+    
+  - title: Zapatillas de casa de piel
+    filter-folder: /zapatilla señora invierno/
+    filter-name: piel
+    description:
 
   - title: Más zapatillas de señora para invierno
     filter-folder: /zapatilla señora invierno/
     filter-no-repeat: true
 
-  - title: Zapatillas de casa de piel
-    filter-folder: /zapatilla señora invierno/
-    filter-name: piel
-    description:
+
 
 ---
 

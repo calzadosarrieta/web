@@ -20,13 +20,13 @@ categories:
   - title: Zapatillas de caballero destalonadas
     filter-folder: /zapatilla caballero/
     filter-name: destalonada
-    filter-name-not: 
+    filter-name-not: piel
     description: Zapatillas abiertas por el talón o "de meter el pie"
 
   - title: Zapatillas de casa de caballero cerrada
     filter-folder: /zapatilla caballero/
     filter-name: cerrada
-    filter-name-not: 
+    filter-name-not: piel
     description: Zapatillas con el talón cerrado, ¡las más sujetas!
 
 
