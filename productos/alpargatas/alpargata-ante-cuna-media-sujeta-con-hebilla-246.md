@@ -1,6 +1,6 @@
 ---
 layout: product
-id: 5b18322d50081993
+id: 2469bf9c46726a98
 title: Alpargata ante cuña media sujeta con hebilla
 image: img/productos/alpargatas/Alpargata ante cuña media sujeta con hebilla=59=doble=verde kaki azul marino beige camel gaimo.webp
 price: 59
