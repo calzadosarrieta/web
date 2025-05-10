@@ -1,5 +1,5 @@
 ---
-title: Zapatillas Señora e Infantil Invierno
+title: Zapatillas Señora Invierno
 layout: section
 image: img/zapatillas-senora-invierno.webp
 categories:
