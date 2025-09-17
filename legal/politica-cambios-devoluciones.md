@@ -6,7 +6,7 @@ title: Política de cambios y devoluciones
 
 **Política de cambios y devoluciones**
 
-En Calzados Arrieta, queremos  clientes satisfechos con sus compras. Por eso, ofrecemos una política de cambios y devoluciones acorde y transparente. Si no estás satisfecho con tu pedido, puedes devolverlo o cambiarlo en un plazo de 15 días a partir de la fecha de compra. A continuación, te indicamos los detalles:
+En Calzados Arrieta.com, queremos  clientes satisfechos también con sus compras a distancia. Por eso, ofrecemos una política de cambios y devoluciones acorde y transparente. Si no estás satisfecho con tu pedido online, puedes devolverlo o cambiarlo en un plazo de 15 días a partir de la fecha de compra. A continuación, te indicamos los detalles:
 
 **Plazo:**
 
@@ -49,3 +49,6 @@ Para realizar un cambio, contacta con nosotros. Te indicaremos como devolver el 
 **Derecho de desistimiento:**
 
 El consumidor podrá devolver o cambiar el producto sin necesidad de justificación en un plazo de 14 días.
+
+Te recordamos que para las compras presenciales en tienda, el plazo para la devolución del dinero es de 1 día hábil. Pasado ese plazo, se podrá optar por un cambio de producto o un crédito en forma de vale sin caducidad.
+Las condiciones del producto deben ser las mismas (Estar sin usar, limpio, sin manipular ni personalizar y encontrarse en su caja de cartón o embalaje original).
