@@ -6,20 +6,7 @@ categories:
 
 
 
-  - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
-    filter-folder: /zapatilla caballero/verano
-    filter-name: destalonada
-    description: Las zapatillas más fresquitas y transpirables. Abiertas, destalonadas y cerradas, pero de verano!!
 
-  - title: 
-    filter-folder: /zapatilla caballero/verano
-    filter-name: cerrada
-    description: 
-
-  - title: 
-    filter-folder: /zapatilla caballero/verano
-    filter-name: abierta
-    description: 
 
 
   - title: Zapatillas de casa de caballero de piel
@@ -39,6 +26,20 @@ categories:
     description: Zapatillas con el talón cerrado, ¡las más sujetas!
 
 
+  - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
+    filter-folder: /zapatilla caballero/verano
+    filter-name: destalonada
+    description: Las zapatillas más fresquitas y transpirables. Abiertas, destalonadas y cerradas, pero de verano!!
+
+  - title: 
+    filter-folder: /zapatilla caballero/verano
+    filter-name: cerrada
+    description: 
+
+  - title: 
+    filter-folder: /zapatilla caballero/verano
+    filter-name: abierta
+    description: 
 
   - title: Más zapatillas de caballero
     filter-folder: /zapatilla caballero/
