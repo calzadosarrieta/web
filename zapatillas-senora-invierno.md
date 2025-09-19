@@ -37,12 +37,6 @@ categories:
     filter-name: piel
     description:
 
-  - title: Últimos pares
-    filter-folder: /zapatilla señora invierno/Últimos pares
-    filter-name: 
-    filter-name-not: 
-    description: Modelos a punto de agotarse. Consúltanos la disponibilidad en tu número.
-
 
   - title: Más zapatillas de señora para invierno
     filter-folder: /zapatilla señora invierno/
