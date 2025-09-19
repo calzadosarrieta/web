@@ -2,9 +2,9 @@
 layout: product
 id: 147ea56b3db1336e
 title: Zapatilla de casa de piel destalonada con cuña
-image: img/productos/zapatilla señora invierno/Zapatilla de casa de piel destalonada con cuña=49=azul  burdeos rosa beige rojo blanco.webp
+image: img/productos/zapatilla señora invierno/Zapatilla de casa de piel destalonada con cuña=49=doble=azul  burdeos beige blanco.webp
 price: 49
-tags: azul  burdeos rosa beige rojo blanco
-description: 
+tags: doble
+description: azul  burdeos beige blanco
 order: 0
 ---

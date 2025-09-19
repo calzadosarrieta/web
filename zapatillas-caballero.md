@@ -9,10 +9,7 @@ categories:
 
 
 
-  - title: Zapatillas de casa de caballero de piel
-    filter-folder: /zapatilla caballero/piel
-    filter-name: piel
-    description: Zapatillas de piel
+
 
   - title: Zapatillas de casa destalonadas de invierno 
     filter-folder: /zapatilla caballero/invierno
@@ -24,6 +21,11 @@ categories:
     filter-folder: /zapatilla caballero/invierno
     filter-name: cerrada
     description: Zapatillas con el talón cerrado, ¡las más sujetas!
+
+  - title: Zapatillas de casa de caballero de piel
+    filter-folder: /zapatilla caballero/piel
+    filter-name: piel
+    description: Zapatillas de piel
 
 
   - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
@@ -40,6 +42,11 @@ categories:
     filter-folder: /zapatilla caballero/verano
     filter-name: abierta
     description: 
+
+  - title: Zapatillas de casa de caballero. ¡¡Últimos pares!!
+    filter-folder: /zapatilla caballero/Últimos pares
+    filter-name: 
+    description: Modelos a punto de agotarse. Consultanos la disponibilidad en tu número.   
 
   - title: Más zapatillas de caballero
     filter-folder: /zapatilla caballero/
