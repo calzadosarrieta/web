@@ -7,8 +7,7 @@ categories:
 
 
   - title: Zapatillas de casa de invierno destalonada
-    filter-folder: /zapatilla señora invierno/
-    filter-folder-not: /zapatilla señora invierno/Últimos pares destalonada
+    filter-folder: /zapatilla señora invierno/destalonada
     filter-name: destalonada
     filter-name-not: piel
     description: Zapatillas sin talón, cómodas y calentitas para estar en casa 
@@ -21,8 +20,7 @@ categories:
 
 
   - title: Zapatillas de casa cerradas para invierno
-    filter-folder: /zapatilla señora invierno/
-    filter-folder-not: /zapatilla señora invierno/Últimos pares cerrada
+    filter-folder: /zapatilla señora invierno/cerrada
     filter-name: cerrada
     filter-name-not: piel
     description: Nuestras zapatillas más sujetas y abrigadas
