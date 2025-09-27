@@ -15,7 +15,7 @@ categories:
 
   - title:
     filter-folder: /zapatilla señora invierno/Últimos pares destalonada
-    filter-name: destalonada
+    filter-name: 
     filter-name-not: 
     description: 
 
@@ -29,7 +29,7 @@ categories:
     
   - title: 
     filter-folder: /zapatilla señora invierno/Últimos pares cerrada
-    filter-name: cerrada
+    filter-name: 
     filter-name-not: 
     description:
 
