@@ -2,9 +2,9 @@
 layout: product
 id: df7ab70795e4cf60
 title: Zapatilla de casa cerrada. Clásica
-image: img/productos/zapatilla señora invierno/cerrada/Zapatilla de casa cerrada. Clásica=22=azul marino burdeos La Cadena.webp
+image: img/productos/zapatilla señora invierno/cerrada/Zapatilla de casa cerrada. Clásica=22=doble=azul marino burdeos La Cadena.webp
 price: 22
-tags: azul marino burdeos La Cadena
-description: 
+tags: doble
+description: azul marino burdeos La Cadena
 order: 0
 ---
