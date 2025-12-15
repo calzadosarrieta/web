@@ -1,5 +1,7 @@
 settings:
   hide: false
+  content:
+    merge: true
 media:
   input: img/productos
   output: img/productos
@@ -20,3 +22,4 @@ content:
       - { name: description, label: Descripción, type: string }
       - { name: image, label: Imagen, type: image }
       - { name: price, label: Precio, type: number}
+      - { name: tags, label: Etiquetas, type: string }
