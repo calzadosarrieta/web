@@ -1,0 +1,22 @@
+settings:
+  hide: false
+media:
+  input: img/productos
+  output: img/productos
+  categories: ["image", "document"]
+content:
+  - name: products
+    label: Productos
+    type: collection
+    subfolders: true
+    path: pages
+    view:
+      fields: [image, title]
+      primary: title
+    filename: "{primary}.md"
+    exclude: [public, aviso-legal.md]
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: description, label: Descripción, type: string }
+      - { name: image, label: Imagen, type: image }
+      - { name: price, label: Precio, type: number}
