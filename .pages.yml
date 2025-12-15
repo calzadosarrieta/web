@@ -9,7 +9,7 @@ content:
     label: Productos
     type: collection
     subfolders: true
-    path: pages
+    path: productos
     view:
       fields: [image, title]
       primary: title
