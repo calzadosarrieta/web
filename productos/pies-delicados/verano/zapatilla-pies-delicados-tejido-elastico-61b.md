@@ -2,9 +2,9 @@
 layout: product
 id: 61b3368140c99b9d
 title: Zapatilla pies delicados tejido elástico 
-image: img/productos/pies delicados/verano/Zapatilla pies delicados tejido elástico =26 =doble destacado1=azul marino beige negro verano.webp
+image: img/productos/pies delicados/verano/Zapatilla pies delicados tejido elástico =26 =doble destacado1=azul marino beige negro verano 828.webp
 price: 26 
 tags: doble destacado1
-description: azul marino beige negro verano
+description: azul marino beige negro verano 828
 order: 1
 ---
