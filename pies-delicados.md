@@ -4,12 +4,12 @@ layout: section
 image: img/pies-delicados.webp
 categories:
   - title: Pies delicados
-    filter-folder: /pies delicados/invierno
+    filter-folder: /pies delicados/verano
     filter-name-not: /pies delicados/otros
     description: En ésta sección encontrarás calzado pensado para pies particularmente sensibles, que duelen, o que necesitan una especial delicadeza y elasticidad de los materiales
 
   - title:
-    filter-folder: /pies delicados/verano
+    filter-folder: /pies delicados/invierno
     description: 
 
 
