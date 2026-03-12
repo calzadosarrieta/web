@@ -5,7 +5,7 @@ image: img/zapatillas-caballero.webp
 categories:
 
 
- - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
+  - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
     filter-folder: /zapatilla caballero/verano
     filter-name: destalonada
     description: Las zapatillas más fresquitas y transpirables. Abiertas, destalonadas y cerradas, pero de verano!!
