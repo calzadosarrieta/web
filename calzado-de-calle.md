@@ -7,7 +7,7 @@ categories:
   - title: Abarcas
     filter-folder: /calzado de calle/Abarca
     filter-name: 
-    description: Abarcas de goma para recibir a Olentzero
+    description: Abarcas de goma y de cuero para recibir a Olentzero
 
   - title: Calzado deportivo y de montaña
     filter-folder: /calzado de calle/Deportiva y monte
