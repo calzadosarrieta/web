@@ -2,7 +2,7 @@
 layout: product
 id: dcb872e727c281b8
 title: Zapatilla de señora cerrada con velcro
-image: img/productos/calzado de calle/Zapato/Zapatilla de señora cerrada con velcro=31=negro cutillas.webp
+image: img/productos/calzado de calle/Zapato/invierno/Zapatilla de señora cerrada con velcro=31=negro cutillas.webp
 price: 31
 tags: negro cutillas
 description: 

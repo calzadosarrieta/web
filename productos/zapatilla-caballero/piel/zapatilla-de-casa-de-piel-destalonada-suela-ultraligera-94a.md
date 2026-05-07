@@ -2,8 +2,8 @@
 layout: product
 id: 94a64c075a27d2a2
 title: Zapatilla de casa  de piel destalonada. Suela ultraligera
-image: img/productos/zapatilla caballero/piel/Zapatilla de casa  de piel destalonada. Suela ultraligera=36=azul marino marrón vulladi.webp
-price: 36
+image: img/productos/zapatilla caballero/piel/Zapatilla de casa  de piel destalonada. Suela ultraligera=38=azul marino marrón vulladi.webp
+price: 38
 tags: azul marino marrón vulladi
 description: 
 order: 0

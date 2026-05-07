@@ -4,10 +4,25 @@ layout: section
 image: img/calzado-calle.webp
 categories:
 
-  - title: Abarcas
-    filter-folder: /calzado de calle/Abarca
+
+  - title: Chancletas
+    filter-folder: /calzado de calle/Chancletas
     filter-name: 
-    description: Abarcas de goma y de cuero para recibir a Olentzero
+    description: Chancletas y calzado para el agua, la playa y la piscina
+
+  - title: Clásicos de calle
+    filter-folder: /calzado de calle/Clásicos
+    filter-name: 
+    description: Las llames como las llames, aquí encontrarás los clásicos del verano para salir a la calle. 
+
+  - title: Calzado Infantil y respetuoso
+    filter-folder: /calzado de calle/Infantil y respetuoso
+    filter-name: infantil
+    filter-name-or: respetuoso
+    description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 
+
+
+
 
   - title: Calzado deportivo y de montaña
     filter-folder: /calzado de calle/Deportiva y monte
@@ -27,24 +42,14 @@ categories:
     description: Aquí te presentamos una pequeña selección de zapatos con los que ir siempre cómodo
 
 
-
-  - title: Calzado Infantil y respetuoso
-    filter-folder: /calzado de calle/Infantil y respetuoso
-    filter-name: infantil
-    filter-name-or: respetuoso
-    description: Calzados de siempre y de ahora para los más peques. Pregúntanos por el calzado respetuoso!! 
-
-
-
-  - title: Clásicos de calle
-    filter-folder: /calzado de calle/Clásicos
+  - title: Abarcas
+    filter-folder: /calzado de calle/Abarca
     filter-name: 
-    description: Las llames como las llames, aquí encontrarás los clásicos del verano para salir a la calle. 
+    description: Abarcas de goma y de cuero para recibir a Olentzero
 
-  - title: Chancletas
-    filter-folder: /calzado de calle/Chancletas
-    filter-name: 
-    description: Chancletas y calzado para el agua, la playa y la piscina
+
+
+
 
 
 
