@@ -5,6 +5,23 @@ image: img/zapatillas-caballero.webp
 categories:
 
 
+    - title: Zapatillas de casa destalonadas de invierno 
+    filter-folder: /zapatilla caballero/invierno
+    filter-name: destalonada
+    description: Zapatillas abiertas por el talón o "de meter el pie"
+    
+
+  - title: Zapatillas de casa cerradas de invierno
+    filter-folder: /zapatilla caballero/invierno
+    filter-name: cerrada
+    description: Zapatillas con el talón cerrado, ¡las más sujetas!
+
+  - title: Zapatillas de casa de caballero de piel
+    filter-folder: /zapatilla caballero/piel
+    filter-name: piel
+    description: Zapatillas de piel
+
+
   - title: Zapatillas de casa de caballero. ¡¡Especial Verano!!
     filter-folder: /zapatilla caballero/verano
     filter-name: destalonada
@@ -19,28 +36,6 @@ categories:
     filter-folder: /zapatilla caballero/verano
     filter-name: abierta
     description: 
-
-
-  - title: Zapatillas de casa de caballero de piel
-    filter-folder: /zapatilla caballero/piel
-    filter-name: piel
-    description: Zapatillas de piel
-
-
-
-  - title: Zapatillas de casa destalonadas de invierno 
-    filter-folder: /zapatilla caballero/invierno
-    filter-name: destalonada
-    description: Zapatillas abiertas por el talón o "de meter el pie"
-    
-
-  - title: Zapatillas de casa cerradas de invierno
-    filter-folder: /zapatilla caballero/invierno
-    filter-name: cerrada
-    description: Zapatillas con el talón cerrado, ¡las más sujetas!
-
-
-
  
 
   - title: Zapatillas de casa de caballero. ¡¡Últimos pares!!
