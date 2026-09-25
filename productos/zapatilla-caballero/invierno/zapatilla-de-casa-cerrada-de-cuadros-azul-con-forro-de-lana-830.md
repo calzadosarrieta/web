@@ -2,8 +2,8 @@
 layout: product
 id: 830765e4cb7c1865
 title: Zapatilla de casa cerrada de cuadros azul con forro de lana
-image: img/productos/zapatilla caballero/invierno/Zapatilla de casa cerrada de cuadros azul con forro de lana=16=invierno Norteñas.webp
-price: 16
+image: img/productos/zapatilla caballero/invierno/Zapatilla de casa cerrada de cuadros azul con forro de lana=17=invierno Norteñas.webp
+price: 17
 tags: invierno Norteñas
 description: 
 order: 0
