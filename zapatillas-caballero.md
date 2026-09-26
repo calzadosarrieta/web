@@ -5,7 +5,7 @@ image: img/zapatillas-caballero.webp
 categories:
 
 
-    - title: Zapatillas de casa destalonadas de invierno 
+  - title: Zapatillas de casa destalonadas de invierno 
     filter-folder: /zapatilla caballero/invierno
     filter-name: destalonada
     description: Zapatillas abiertas por el talón o "de meter el pie"
