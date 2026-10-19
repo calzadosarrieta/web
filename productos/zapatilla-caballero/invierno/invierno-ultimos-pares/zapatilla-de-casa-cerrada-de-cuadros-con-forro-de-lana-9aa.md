@@ -2,7 +2,7 @@
 layout: product
 id: 9aaf28c6df6071e9
 title: Zapatilla de casa cerrada de cuadros con forro de lana
-image: img/productos/zapatilla caballero/invierno/Zapatilla de casa cerrada de cuadros con forro de lana=17.webp
+image: img/productos/zapatilla caballero/invierno/invierno últimos pares/Zapatilla de casa cerrada de cuadros con forro de lana=17.webp
 price: 17
 tags: 
 description: 
