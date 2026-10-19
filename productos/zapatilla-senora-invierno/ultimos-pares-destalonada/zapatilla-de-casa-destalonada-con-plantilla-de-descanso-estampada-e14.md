@@ -2,7 +2,7 @@
 layout: product
 id: e141ba4ae48de149
 title: Zapatilla de casa destalonada con plantilla de descanso estampada
-image: img/productos/zapatilla señora invierno/destalonada/Zapatilla de casa destalonada con plantilla de descanso estampada=23= biorrelax azul.webp
+image: img/productos/zapatilla señora invierno/Últimos pares destalonada/Zapatilla de casa destalonada con plantilla de descanso estampada=23= biorrelax azul.webp
 price: 23
 tags:  biorrelax azul
 description: 

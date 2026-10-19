@@ -2,7 +2,7 @@
 layout: product
 id: 91624544f012fe42
 title: Zapatilla de casa destalonada con plantilla descanso dibujo hojas
-image: img/productos/zapatilla señora invierno/destalonada/Zapatilla de casa destalonada con plantilla descanso dibujo hojas=23= verde biorrelax.webp
+image: img/productos/zapatilla señora invierno/Últimos pares destalonada/Zapatilla de casa destalonada con plantilla descanso dibujo hojas=23= verde biorrelax.webp
 price: 23
 tags:  verde biorrelax
 description: 
