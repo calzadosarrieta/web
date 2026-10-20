@@ -2,9 +2,9 @@
 layout: product
 id: 77309953a6104da8
 title: Zapatilla cerrada plantilla acolchada tipo espiga
-image: img/productos/zapatilla caballero/invierno/Zapatilla cerrada plantilla acolchada tipo espiga=27=salvi marino 08D.webp
+image: img/productos/zapatilla caballero/invierno/Zapatilla cerrada plantilla acolchada tipo espiga=27=doble=salvi marino 08D.webp
 price: 27
-tags: salvi marino 08D
-description: 
+tags: doble
+description: salvi marino 08D
 order: 0
 ---
