@@ -1,6 +1,6 @@
 ---
 layout: product
-id: ea2f7ade18bfef4e
+id: 
 title: Zapatilla cerrada suela blanda
 image: img/productos/zapatilla señora invierno/cerrada/Zapatilla cerrada suela blanda=18=5-980 azul norteñas.webp
 price: 18
